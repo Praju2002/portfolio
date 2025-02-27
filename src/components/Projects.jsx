@@ -26,7 +26,7 @@ const projects = [
     title: "Gantabya",
     image: "/gantabya.jpg",
     desc: "Hyper-localized travel app using OpenStreetMap and real-time updates. Discover hidden gems with personalized recommendations.",
-    tags: ["React Native", "OpenStreetMap", "Firebase"],
+    tags: ["React ", "OpenStreetMap", "Firebase"],
     github: "https://github.com/yourusername/gantabya",
     liveDemo: "https://gantabya.yourdomain.com"
   },
