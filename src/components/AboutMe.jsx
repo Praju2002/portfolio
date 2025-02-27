@@ -142,7 +142,7 @@ const AboutMe = () => {
                 textTransform: "uppercase"
               }}
             >
-              Full Stack Developer | Computer Engineering Student
+              MERN Stack Developer | Computer Engineering Student
             </Typography>
 
             {/* Social Links */}
