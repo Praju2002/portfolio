@@ -4,6 +4,7 @@ import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Achievements from "./components/Achievements";
+import Footer from "./components/Footer";
 import { Box, ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 
 // Create a custom theme
@@ -68,10 +69,14 @@ const App = () => {
           width: { xs: "100%", md: "calc(100% - 260px)" }, // Full width minus navbar width
           ml: { xs: 0, md: "260px" }, // Margin on desktop to account for fixed navbar
           p: { xs: 2, sm: 3, md: 4 },
+          pb: { xs: 0, md: 0 }, // Bottom padding on mobile for footer
         }}>
           {renderSection()}
+          <Footer/>
         </Box>
+       
       </Box>
+     
     </ThemeProvider>
   );
 };

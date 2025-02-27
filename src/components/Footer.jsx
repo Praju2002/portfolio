@@ -8,7 +8,7 @@ const Footer = () => {
         textAlign: "center",
         p: 3,
         mt: 10,
-        background: "rgba(255, 182, 193, 0.6)",
+        background: "#ba55d3",
         color: "white",
       }}
     >

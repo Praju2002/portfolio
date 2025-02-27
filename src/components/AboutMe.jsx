@@ -418,12 +418,7 @@ const AboutMe = () => {
             </Grid>
           </Grid>
           
-          {/* Footer */}
-          <Box sx={{ textAlign: "center", mt: 6, color: "#666" }}>
-            <Typography variant="body2">
-              © {new Date().getFullYear()} Praju Khanal. All rights reserved.
-            </Typography>
-          </Box>
+         
         </Container>
       </Box>
     </ThemeProvider>
