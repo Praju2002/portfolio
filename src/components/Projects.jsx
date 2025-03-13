@@ -36,7 +36,7 @@ const projects = [
     image: "/gantabya.jpg", 
     desc: "Hyper-localized travel app using OpenStreetMap and real-time updates. Discover hidden gems with personalized recommendations.",
     tags: ["React", "OpenStreetMap"],
-    github: "https://github.com/Abhiyan31415/Elsender.git"
+    github: "https://github.com/Abhiyan31415/Elsendero.git"
   },
   {
     title: "SootheSphere",
