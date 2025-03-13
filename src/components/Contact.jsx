@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { 
-  Box, 
-  TextField, 
-  Button, 
-  Typography, 
-  Container, 
-  Grid, 
-  InputAdornment, 
-  Snackbar, 
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Container,
+  Grid,
+  InputAdornment,
+  Snackbar,
   Alert,
   Paper,
   useTheme,
@@ -27,12 +27,12 @@ const Contact = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [formStatus, setFormStatus] = useState({ open: false, message: "", severity: "success" });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Simulate form submission
@@ -45,7 +45,7 @@ const Contact = () => {
       setFormData({ name: "", email: "", message: "" });
     }, 1000);
   };
-  
+
   const handleCloseSnackbar = () => {
     setFormStatus({ ...formStatus, open: false });
   };
@@ -76,13 +76,13 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { name: "LinkedIn", icon: <LinkedInIcon fontSize="small" /> },
-    { name: "GitHub", icon: <GitHubIcon fontSize="small" /> },
-    { name: "Twitter", icon: <TwitterIcon fontSize="small" /> }
+    { name: "LinkedIn", icon: <LinkedInIcon fontSize="small" />, url: "https://www.linkedin.com/in/praju-khanal/" },
+    { name: "GitHub", icon: <GitHubIcon fontSize="small" />, url: "https://github.com/Praju2002" },
+    // { name: "Twitter", icon: <TwitterIcon fontSize="small" />, url: "https://twitter.com/your-profile" }
   ];
 
   return (
-    <Box sx={{ 
+    <Box sx={{
       backgroundColor: "#f8f0f8", // Using the theme's background.default
       py: { xs: 6, md: 12 },
       overflow: "hidden"
@@ -95,8 +95,8 @@ const Contact = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.div variants={itemVariants}>
-            <Typography 
-              variant="h2" 
+            <Typography
+              variant="h2"
               color="#ba55d3" // Using primary.main for the heading
               sx={{
                 textAlign: "center",
@@ -106,17 +106,17 @@ const Contact = () => {
             >
               Get in Touch
             </Typography>
-            
-           
+
+
 
             <Typography
               variant="body1"
               color="text.secondary"
-              sx={{ 
-                textAlign: "center", 
-                mb: 6, 
-                maxWidth: "700px", 
-                mx: "auto", 
+              sx={{
+                textAlign: "center",
+                mb: 6,
+                maxWidth: "700px",
+                mx: "auto",
                 lineHeight: 1.8,
                 px: 2
               }}
@@ -168,13 +168,13 @@ const Contact = () => {
                     <Typography variant="h5" fontWeight="bold" sx={{ mb: 4, position: "relative", zIndex: 2 }}>
                       Contact Information
                     </Typography>
-                    
+
                     <Box sx={{ mb: 4, display: "flex", alignItems: "center", position: "relative", zIndex: 2 }}>
-                      <Box 
-                        sx={{ 
-                          mr: 2, 
-                          p: 1.5, 
-                          borderRadius: "50%", 
+                      <Box
+                        sx={{
+                          mr: 2,
+                          p: 1.5,
+                          borderRadius: "50%",
                           backgroundColor: "rgba(255, 255, 255, 0.2)",
                           display: "flex"
                         }}
@@ -187,7 +187,7 @@ const Contact = () => {
                       </Box>
                     </Box>
                   </Box>
-                  
+
                   <Box sx={{ position: "relative", zIndex: 2 }}>
                     <Typography variant="body2" sx={{ opacity: 0.8, mb: 1 }}>Connect with me</Typography>
                     <Box sx={{ display: "flex", gap: 2, mt: 0.5 }}>
@@ -195,7 +195,9 @@ const Contact = () => {
                         <Box
                           key={platform.name}
                           component="a"
-                          href="#"
+                          href={platform.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           sx={{
                             p: 1.5,
                             borderRadius: "50%",
@@ -220,7 +222,7 @@ const Contact = () => {
                 </Paper>
               </motion.div>
             </Grid>
-            
+
             <Grid item xs={12} md={7}>
               <motion.div variants={itemVariants}>
                 <Paper
@@ -236,24 +238,24 @@ const Contact = () => {
                     flexDirection: "column",
                   }}
                 >
-                  <Typography 
-                    variant="h5" 
+                  <Typography
+                    variant="h5"
                     color="#ba55d3" // Using primary.main
-                    fontWeight="bold" 
+                    fontWeight="bold"
                     sx={{ mb: 4 }}
                   >
                     Send a Message
                   </Typography>
-                  
-                  <TextField 
-                    fullWidth 
-                    label="Full Name" 
+
+                  <TextField
+                    fullWidth
+                    label="Full Name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    variant="outlined" 
+                    variant="outlined"
                     required
-                    sx={{ 
+                    sx={{
                       mb: 3,
                       "& .MuiOutlinedInput-root": {
                         borderRadius: 2,
@@ -264,7 +266,7 @@ const Contact = () => {
                           borderColor: "#ba55d3", // Using primary.main
                         }
                       }
-                    }} 
+                    }}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -273,17 +275,17 @@ const Contact = () => {
                       ),
                     }}
                   />
-                  
-                  <TextField 
-                    fullWidth 
-                    label="Email Address" 
+
+                  <TextField
+                    fullWidth
+                    label="Email Address"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     type="email"
-                    variant="outlined" 
+                    variant="outlined"
                     required
-                    sx={{ 
+                    sx={{
                       mb: 3,
                       "& .MuiOutlinedInput-root": {
                         borderRadius: 2,
@@ -303,18 +305,18 @@ const Contact = () => {
                       ),
                     }}
                   />
-                  
-                  <TextField 
-                    fullWidth 
-                    label="Your Message" 
+
+                  <TextField
+                    fullWidth
+                    label="Your Message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    multiline 
-                    rows={isMobile ? 3 : 5} 
-                    variant="outlined" 
+                    multiline
+                    rows={isMobile ? 3 : 5}
+                    variant="outlined"
                     required
-                    sx={{ 
+                    sx={{
                       mb: 4,
                       "& .MuiOutlinedInput-root": {
                         borderRadius: 2,
@@ -334,13 +336,13 @@ const Contact = () => {
                       ),
                     }}
                   />
-                  
-                  <Button 
-                    variant="contained" 
+
+                  <Button
+                    variant="contained"
                     type="submit"
                     startIcon={<SendIcon />}
                     disableElevation
-                    sx={{ 
+                    sx={{
                       py: 1.5,
                       px: 4,
                       borderRadius: 2,
@@ -349,11 +351,11 @@ const Contact = () => {
                       fontWeight: "medium",
                       alignSelf: "flex-start",
                       transition: "all 0.3s ease",
-                      "&:hover": { 
+                      "&:hover": {
                         backgroundColor: "#9932cc", // Using primary.dark
                         transform: "translateY(-2px)",
                         boxShadow: `0 8px 20px rgba(186, 85, 211, 0.3)`, // Using primary.main with opacity
-                      } 
+                      }
                     }}
                   >
                     Send Message
@@ -364,16 +366,16 @@ const Contact = () => {
           </Grid>
         </motion.div>
       </Container>
-      
-      <Snackbar 
-        open={formStatus.open} 
-        autoHideDuration={6000} 
+
+      <Snackbar
+        open={formStatus.open}
+        autoHideDuration={6000}
         onClose={handleCloseSnackbar}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       >
-        <Alert 
-          onClose={handleCloseSnackbar} 
-          severity={formStatus.severity} 
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={formStatus.severity}
           sx={{ width: '100%', borderRadius: 2 }}
         >
           {formStatus.message}

@@ -232,14 +232,7 @@ const AboutMe = () => {
                     <Typography variant="h4" fontWeight="700" textAlign="center" color="#333">
                       Praju Khanal
                     </Typography>
-                    <Typography 
-                      variant="body1" 
-                      color="text.secondary" 
-                      textAlign="center"
-                      sx={{ mb: 2, fontStyle: "italic" }}
-                    >
-                      "Building elegant solutions to complex problems"
-                    </Typography>
+                
                   </Box>
 
                   <Box sx={{ p: 3 }}>
