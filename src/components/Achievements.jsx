@@ -8,12 +8,11 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
 const Achievements = () => {
-  // Enhanced lilac pink colors - more vibrant and less light
-  const primaryColor = "#ba55d3"; // Medium orchid - stronger lilac pink
-  const secondaryColor = "#9932cc"; // Dark orchid - deeper for contrast
-  const lightColor = "#d8bfd8"; // Thistle - less light but still provides contrast
-  const textOnPrimaryColor = "#ffffff"; // White text on primary color
-  const backgroundColor = "#f8f0f8"; // Subtle lilac background
+  const primaryColor = "#ba55d3"; 
+  const secondaryColor = "#9932cc"; 
+  const lightColor = "#d8bfd8"; 
+  const textOnPrimaryColor = "#ffffff"; 
+  const backgroundColor = "#f8f0f8"; 
   const paperColor = "#fcf7fc";
 
   const achievements = [
@@ -47,7 +46,7 @@ const Achievements = () => {
     },
   ];
 
-  // Animation variants
+  
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { 
@@ -72,7 +71,7 @@ const Achievements = () => {
       case "Competition":
         return primaryColor;
       case "Hackathon":
-        return "#c71585"; // Medium violet red
+        return "#c71585"; 
       case "Fellowship":
         return secondaryColor;
       case "Open Source":
@@ -93,9 +92,9 @@ const Achievements = () => {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        paddingLeft: { xs: 2, md: 2 }, // Account for sidebar on desktop
+        paddingLeft: { xs: 2, md: 2 }, 
         paddingRight: { xs: 2, md: 2 },
-        paddingBottom: { xs: "80px", md: 6 }, // Extra padding on mobile for bottom nav
+        paddingBottom: { xs: "80px", md: 6 }, 
       }}
     >
       <Container maxWidth="lg" sx={{ width: "100%" ,display: "flex", 

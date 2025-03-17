@@ -35,7 +35,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission
     setTimeout(() => {
       setFormStatus({
         open: true,
@@ -70,7 +69,7 @@ const Contact = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.645, 0.045, 0.355, 1.000] // Cubic bezier for smoother animation
+        ease: [0.645, 0.045, 0.355, 1.000] 
       }
     }
   };
@@ -83,7 +82,7 @@ const Contact = () => {
 
   return (
     <Box sx={{
-      backgroundColor: "#f8f0f8", // Using the theme's background.default
+      backgroundColor: "#f8f0f8", 
       py: { xs: 6, md: 12 },
       overflow: "hidden"
     }}>
@@ -97,7 +96,7 @@ const Contact = () => {
           <motion.div variants={itemVariants}>
             <Typography
               variant="h2"
-              color="#ba55d3" // Using primary.main for the heading
+              color="#ba55d3" 
               sx={{
                 textAlign: "center",
                 mb: 1,
@@ -232,7 +231,7 @@ const Contact = () => {
                   sx={{
                     p: { xs: 3, md: 5 },
                     borderRadius: 4,
-                    backgroundColor: "#fcf7fc", // Using theme.background.paper
+                    backgroundColor: "#fcf7fc",
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
@@ -240,7 +239,7 @@ const Contact = () => {
                 >
                   <Typography
                     variant="h5"
-                    color="#ba55d3" // Using primary.main
+                    color="#ba55d3" 
                     fontWeight="bold"
                     sx={{ mb: 4 }}
                   >
@@ -260,17 +259,17 @@ const Contact = () => {
                       "& .MuiOutlinedInput-root": {
                         borderRadius: 2,
                         "&:hover fieldset": {
-                          borderColor: "#ba55d3", // Using primary.main
+                          borderColor: "#ba55d3", 
                         },
                         "&.Mui-focused fieldset": {
-                          borderColor: "#ba55d3", // Using primary.main
+                          borderColor: "#ba55d3",
                         }
                       }
                     }}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
-                          <PersonIcon fontSize="small" sx={{ color: "#ba55d3" }} /> {/* Using primary.main */}
+                          <PersonIcon fontSize="small" sx={{ color: "#ba55d3" }} />
                         </InputAdornment>
                       ),
                     }}
@@ -290,10 +289,10 @@ const Contact = () => {
                       "& .MuiOutlinedInput-root": {
                         borderRadius: 2,
                         "&:hover fieldset": {
-                          borderColor: "#ba55d3", // Using primary.main
+                          borderColor: "#ba55d3",
                         },
                         "&.Mui-focused fieldset": {
-                          borderColor: "#ba55d3", // Using primary.main
+                          borderColor: "#ba55d3", 
                         }
                       }
                     }}
@@ -321,17 +320,17 @@ const Contact = () => {
                       "& .MuiOutlinedInput-root": {
                         borderRadius: 2,
                         "&:hover fieldset": {
-                          borderColor: "#ba55d3", // Using primary.main
+                          borderColor: "#ba55d3", 
                         },
                         "&.Mui-focused fieldset": {
-                          borderColor: "#ba55d3", // Using primary.main
+                          borderColor: "#ba55d3", 
                         }
                       }
                     }}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start" sx={{ alignSelf: "flex-start", mt: 1.5 }}>
-                          <MessageIcon fontSize="small" sx={{ color: "#ba55d3" }} /> {/* Using primary.main */}
+                          <MessageIcon fontSize="small" sx={{ color: "#ba55d3" }} /> 
                         </InputAdornment>
                       ),
                     }}
@@ -346,15 +345,15 @@ const Contact = () => {
                       py: 1.5,
                       px: 4,
                       borderRadius: 2,
-                      backgroundColor: "#ba55d3", // Using primary.main
+                      backgroundColor: "#ba55d3", 
                       color: "white",
                       fontWeight: "medium",
                       alignSelf: "flex-start",
                       transition: "all 0.3s ease",
                       "&:hover": {
-                        backgroundColor: "#9932cc", // Using primary.dark
+                        backgroundColor: "#9932cc", 
                         transform: "translateY(-2px)",
-                        boxShadow: `0 8px 20px rgba(186, 85, 211, 0.3)`, // Using primary.main with opacity
+                        boxShadow: `0 8px 20px rgba(186, 85, 211, 0.3)`,
                       }
                     }}
                   >

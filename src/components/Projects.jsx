@@ -47,6 +47,24 @@ const projects = [
   }
 ];
 
+// Motion Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, duration: 0.8 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
 const Projects = () => {
   return (
     <Box sx={{ py: { xs: 6, md: 10 }, background: "#f8f0f8" }}>
@@ -63,52 +81,52 @@ const Projects = () => {
         >
           Featured Projects
         </Typography>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <Grid container spacing={4} justifyContent="center">
+            {projects.map((project, index) => (
+              <Grid item key={index} xs={12} sm={6} md={4}>
+                <motion.div variants={itemVariants}>
+                  <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+                    {project.image && (
+                      <CardMedia
+                        component="img"
+                        image={project.image}
+                        alt={project.title}
+                        sx={{ height: 180, objectFit: "cover" }}
+                      />
+                    )}
 
-        <Grid container spacing={4} justifyContent="center">
-          {projects.map((project, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4}>
-              <motion.div
-                whileHover={{
-                  y: -8,
-                  boxShadow: "0 10px 20px rgba(186, 85, 211, 0.3)"
-                }}
-                transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              >
-                <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
-                  {project.image && (
-                    <CardMedia
-                      component="img"
-                      image={project.image}
-                      alt={project.title}
-                      sx={{ height: 180, objectFit: "cover" }}
-                    />
-                  )}
+                    <CardContent sx={{ flexGrow: 1 }}>
+                      <Typography variant="h6" fontWeight={700}>
+                        {project.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary" sx={{ mt: 1, mb: 2 }}>
+                        {project.desc}
+                      </Typography>
 
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography variant="h6" fontWeight={700}>
-                      {project.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary" sx={{ mt: 1, mb: 2 }}>
-                      {project.desc}
-                    </Typography>
+                      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                        {project.tags.map((tag, i) => (
+                          <Chip key={i} label={tag} size="small" sx={{ bgcolor: "#ba55d3", color: "#fff" }} />
+                        ))}
+                      </Box>
+                    </CardContent>
 
-                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                      {project.tags.map((tag, i) => (
-                        <Chip key={i} label={tag} size="small" sx={{ bgcolor: "#ba55d3", color: "#fff" }} />
-                      ))}
+                    <Box sx={{ p: 2, display: "flex", justifyContent: "space-between" }}>
+                      <IconButton component="a" href={project.github} target="_blank" sx={{ color: "#9932cc" }}>
+                        <GitHubIcon />
+                      </IconButton>
                     </Box>
-                  </CardContent>
-
-                  <Box sx={{ p: 2, display: "flex", justifyContent: "space-between" }}>
-                    <IconButton component="a" href={project.github} target="_blank" sx={{ color: "#9932cc" }}>
-                      <GitHubIcon />
-                    </IconButton>
-                  </Box>
-                </Card>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
+                  </Card>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+        </motion.div>
       </Container>
     </Box>
   );

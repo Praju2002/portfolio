@@ -9,48 +9,44 @@ import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 const Navbar = ({ setActiveSection, activeSection }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  
-  // Enhanced lilac pink colors - more vibrant and less light
-  const primaryColor = "#ba55d3"; // Medium orchid - stronger lilac pink
-  const secondaryColor = "#9932cc"; // Dark orchid - deeper for contrast
-  const lightColor = "#d8bfd8"; // Thistle - less light but still provides contrast
-  const textOnPrimaryColor = "#ffffff"; // White text on primary color
+  const primaryColor = "#ba55d3"; 
+  const secondaryColor = "#9932cc"; 
+  const lightColor = "#d8bfd8"; 
+  const textOnPrimaryColor = "#ffffff"; 
 
-  // Navigation items with icons
   const navItems = [
-    { 
-      label: "About", 
-      to: "about", 
-      number: "01", 
+    {
+      label: "About",
+      to: "about",
+      number: "01",
       icon: <PersonRoundedIcon sx={{ fontSize: "1.2rem" }} />
     },
-    { 
-      label: "Projects", 
-      to: "projects", 
-      number: "02", 
+    {
+      label: "Projects",
+      to: "projects",
+      number: "02",
       icon: <CodeRoundedIcon sx={{ fontSize: "1.2rem" }} />
     },
-    { 
-      label: "Achievements", 
-      to: "achievements", 
-      number: "03", 
+    {
+      label: "Achievements",
+      to: "achievements",
+      number: "03",
       icon: <EmojiEventsRoundedIcon sx={{ fontSize: "1.2rem" }} />
     },
-    { 
-      label: "Contact", 
-      to: "contact", 
-      number: "04", 
+    {
+      label: "Contact",
+      to: "contact",
+      number: "04",
       icon: <EmailRoundedIcon sx={{ fontSize: "1.2rem" }} />
     },
   ];
 
-  // Function to handle navigation
+  
   const handleNavClick = (section) => {
     console.log("Navigation clicked:", section);
     setActiveSection(section);
   };
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -64,10 +60,10 @@ const Navbar = ({ setActiveSection, activeSection }) => {
 
   const itemVariants = {
     hidden: { opacity: 0, x: -20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 100,
         damping: 15
@@ -77,10 +73,10 @@ const Navbar = ({ setActiveSection, activeSection }) => {
 
   const logoVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 100,
         damping: 10,
@@ -89,12 +85,10 @@ const Navbar = ({ setActiveSection, activeSection }) => {
     }
   };
 
-  // Handle resume download
   const handleDownloadResume = () => {
     window.open('/Praju_cv.pdf', '_blank');
   };
 
-  // Desktop sidebar
   const DesktopSidebar = () => (
     <Box
       component={motion.div}
@@ -109,9 +103,9 @@ const Navbar = ({ setActiveSection, activeSection }) => {
         left: 0,
         width: "240px",
         height: "100vh",
-        background: "rgba(250, 240, 250, 0.97)", // Slightly tinted background
+        background: "rgba(250, 240, 250, 0.97)", 
         padding: "28px 20px",
-        boxShadow: "1px 0 20px rgba(186, 85, 211, 0.1)", // Shadow with primary color tint
+        boxShadow: "1px 0 20px rgba(186, 85, 211, 0.1)", 
         backdropFilter: "blur(10px)",
         borderRight: `1px solid ${lightColor}`,
         zIndex: 1000,
@@ -130,7 +124,7 @@ const Navbar = ({ setActiveSection, activeSection }) => {
               alignItems: "center",
               justifyContent: "center",
               mr: 1.5,
-              boxShadow: `0 4px 10px rgba(186, 85, 211, 0.4)` // Enhanced shadow
+              boxShadow: `0 4px 10px rgba(186, 85, 211, 0.4)` 
             }}
           >
             <Typography sx={{ color: textOnPrimaryColor, fontWeight: "bold", fontSize: "1.2rem" }}>P</Typography>
@@ -159,15 +153,15 @@ const Navbar = ({ setActiveSection, activeSection }) => {
         }}
       />
 
-      <Box 
+      <Box
         component={motion.div}
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        sx={{ 
-          display: "flex", 
-          flexDirection: "column", 
-          gap: 1.5, 
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 1.5,
           width: "100%",
           alignItems: "flex-start",
           mt: 2
@@ -178,7 +172,7 @@ const Navbar = ({ setActiveSection, activeSection }) => {
             <Button
               onClick={() => handleNavClick(item.to)}
               sx={{
-                color: activeSection === item.to ? primaryColor : "#7a7a8c", // Darker inactive text
+                color: activeSection === item.to ? primaryColor : "#7a7a8c", 
                 textTransform: "none",
                 fontSize: "1rem",
                 fontWeight: activeSection === item.to ? "600" : "500",
@@ -188,8 +182,8 @@ const Navbar = ({ setActiveSection, activeSection }) => {
                 width: "100%",
                 textAlign: "left",
                 position: "relative",
-                background: activeSection === item.to ? `${primaryColor}20` : "transparent", // More visible active background
-                "&:hover": { 
+                background: activeSection === item.to ? `${primaryColor}20` : "transparent", 
+                "&:hover": {
                   background: `${primaryColor}15`,
                   color: primaryColor
                 },
@@ -202,13 +196,13 @@ const Navbar = ({ setActiveSection, activeSection }) => {
               startIcon={item.icon}
             >
               <Box sx={{ display: "flex", alignItems: "center", width: "100%" }}>
-                <Typography 
-                  component="span" 
-                  sx={{ 
-                    color: activeSection === item.to ? primaryColor : "#8a8a9a", // Darker number color
+                <Typography
+                  component="span"
+                  sx={{
+                    color: activeSection === item.to ? primaryColor : "#8a8a9a", 
                     fontSize: "0.75rem",
                     fontWeight: "600",
-                    opacity: 0.9, // Increased opacity
+                    opacity: 0.9, 
                     mr: 1.5,
                     fontFamily: "'Space Mono', monospace"
                   }}
@@ -250,7 +244,7 @@ const Navbar = ({ setActiveSection, activeSection }) => {
             padding: "10px 20px",
             textTransform: "none",
             fontWeight: 600,
-            boxShadow: `0 4px 12px rgba(186, 85, 211, 0.35)`, // Enhanced shadow
+            boxShadow: `0 4px 12px rgba(186, 85, 211, 0.35)`, 
             "&:hover": {
               bgcolor: secondaryColor
             },
@@ -265,10 +259,7 @@ const Navbar = ({ setActiveSection, activeSection }) => {
 
   return (
     <>
-      {/* Only render desktop sidebar */}
       <DesktopSidebar />
-
-      {/* Mobile bottom navigation */}
       <Box
         sx={{
           display: { xs: "flex", md: "none" },
@@ -276,13 +267,14 @@ const Navbar = ({ setActiveSection, activeSection }) => {
           bottom: 0,
           left: 0,
           width: "100%",
-          background: "rgba(250, 240, 250, 0.95)", // Slightly tinted background
+          background: "rgba(250, 240, 250, 0.95)", 
           backdropFilter: "blur(10px)",
           borderTop: `1px solid ${lightColor}`,
-          boxShadow: "0 -2px 10px rgba(186, 85, 211, 0.1)", // Shadow with primary color tint
+          boxShadow: "0 -2px 10px rgba(186, 85, 211, 0.1)",
           zIndex: 1000,
           justifyContent: "space-around",
-          padding: "8px 0"
+          alignItems: "center",
+          padding: "8px 0",
         }}
       >
         {navItems.map((item) => (
@@ -290,7 +282,7 @@ const Navbar = ({ setActiveSection, activeSection }) => {
             key={item.to}
             onClick={() => handleNavClick(item.to)}
             sx={{
-              color: activeSection === item.to ? primaryColor : "#7a7a8c", // Darker inactive text
+              color: activeSection === item.to ? primaryColor : "#7a7a8c",
               borderRadius: "12px",
               padding: "8px",
               display: "flex",
@@ -298,8 +290,8 @@ const Navbar = ({ setActiveSection, activeSection }) => {
               alignItems: "center",
               gap: "2px",
               "&:hover": {
-                background: `${primaryColor}15`
-              }
+                background: `${primaryColor}15`,
+              },
             }}
           >
             {item.icon}
@@ -308,14 +300,35 @@ const Navbar = ({ setActiveSection, activeSection }) => {
               sx={{
                 fontSize: "0.65rem",
                 color: "inherit",
-                fontWeight: activeSection === item.to ? 600 : 400
+                fontWeight: activeSection === item.to ? 600 : 400,
               }}
             >
               {item.label}
             </Typography>
           </IconButton>
         ))}
+
+        <Button
+          onClick={handleDownloadResume}
+          sx={{
+            bgcolor: primaryColor,
+            color: textOnPrimaryColor,
+            borderRadius: "12px",
+            padding: "6px 12px",
+            textTransform: "none",
+            fontWeight: 600,
+            boxShadow: `0 4px 12px rgba(186, 85, 211, 0.35)`,
+            "&:hover": {
+              bgcolor: secondaryColor,
+            },
+            minWidth: "120px",
+            fontSize: "0.75rem",
+          }}
+        >
+          Download Resume
+        </Button>
       </Box>
+
     </>
   );
 };

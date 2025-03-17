@@ -10,19 +10,18 @@ import PersonIcon from '@mui/icons-material/Person';
 import img from "../assets/praju.jpg";
 import { createTheme } from "@mui/material/styles";
 
-// Create theme with enhanced lilac pink colors
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ba55d3", // Medium orchid - stronger lilac pink
-      light: "#d8bfd8", // Thistle - lighter shade but not too light
-      dark: "#9932cc",  // Dark orchid - deeper for contrast
+      main: "#ba55d3", 
+      light: "#d8bfd8", 
+      dark: "#9932cc",  
     },
     secondary: {
-      main: "#c71585", // Medium violet red - complementary to lilac
+      main: "#c71585",
     },
     background: {
-      default: "#f8f0f8", // Subtle lilac background
+      default: "#f8f0f8", 
       paper: "#fcf7fc",
     },
   },
@@ -43,7 +42,7 @@ const theme = createTheme({
 });
 
 const AboutMe = () => {
-  // Animation variants
+ 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { 
@@ -89,13 +88,13 @@ const AboutMe = () => {
           minHeight: "100vh",
         }}
       >
-        {/* Enhanced background pattern */}
+       
         <Box
           sx={{
             position: "absolute",
             width: "100%",
             height: "100%",
-            opacity: 0.07, // Slightly increased opacity for better visibility
+            opacity: 0.07, 
             zIndex: 0,
             top: 0,
             left: 0,
@@ -145,7 +144,6 @@ const AboutMe = () => {
               MERN Stack Developer | Computer Engineering Student
             </Typography>
 
-            {/* Social Links */}
             <Box sx={{ display: "flex", justifyContent: "center", mb: 6, gap: 2 }}>
               <Link href="https://github.com/Praju2002" target="_blank" rel="noopener noreferrer">
                 <IconButton 
@@ -187,7 +185,7 @@ const AboutMe = () => {
           </motion.div>
 
           <Grid container spacing={4}>
-            {/* Left Column */}
+           
             <Grid item xs={12} md={5}>
               <motion.div
                 initial="hidden"
@@ -297,7 +295,7 @@ const AboutMe = () => {
               </motion.div>
             </Grid>
 
-            {/* Right Column */}
+          
             <Grid item xs={12} md={7}>
               <motion.div
                 initial="hidden"
