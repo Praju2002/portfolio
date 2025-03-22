@@ -8,37 +8,37 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
 const Achievements = () => {
-  const primaryColor = "#ba55d3"; 
-  const secondaryColor = "#9932cc"; 
-  const lightColor = "#d8bfd8"; 
-  const textOnPrimaryColor = "#ffffff"; 
-  const backgroundColor = "#f8f0f8"; 
+  const primaryColor = "#ba55d3";
+  const secondaryColor = "#9932cc";
+  const lightColor = "#d8bfd8";
+  const textOnPrimaryColor = "#ffffff";
+  const backgroundColor = "#f8f0f8";
   const paperColor = "#fcf7fc";
 
   const achievements = [
-    { 
-      year: "2024", 
+    {
+      year: "2024",
       event: "1st Place – Intra-College Coding Competition",
       description: "Developed a real-time collaborative code editor with integrated compiler and version control system.",
       icon: <CodeIcon />,
       category: "Competition"
     },
-    { 
-      year: "2024", 
+    {
+      year: "2024",
       event: "Participant – KU Hackathon",
       description: "Developed an interactive travel app utilizing OpenStreetMap API with custom route planning features.",
       icon: <GroupsIcon />,
       category: "Hackathon"
     },
-    { 
-      year: "2024", 
+    {
+      year: "2024",
       event: "Selected as a Fellow for Women Leaders in Technology (WLiT)",
       description: "One of 15 selected from over 150+ applicants for this prestigious technology leadership program.",
       icon: <EmojiEventsIcon />,
       category: "Fellowship"
     },
-    { 
-      year: "2024", 
+    {
+      year: "2024",
       event: "Contributor to GirlScript Summer of Code (GSSoC)",
       description: "Contributed to open source projects focusing on educational technology tools for underserved communities.",
       icon: <VolunteerActivismIcon />,
@@ -46,13 +46,13 @@ const Achievements = () => {
     },
   ];
 
-  
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.6, ease: "easeOut" } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
     }
   };
 
@@ -67,11 +67,11 @@ const Achievements = () => {
   };
 
   const getCategoryColor = (category) => {
-    switch(category) {
+    switch (category) {
       case "Competition":
         return primaryColor;
       case "Hackathon":
-        return "#c71585"; 
+        return "#c71585";
       case "Fellowship":
         return secondaryColor;
       case "Open Source":
@@ -85,52 +85,54 @@ const Achievements = () => {
     <Box
       component="section"
       id="achievements"
-      sx={{ 
-        py: 6, 
+      sx={{
+        py: 6,
         position: "relative",
         background: `linear-gradient(135deg, ${backgroundColor} 0%, #ffeef5 100%)`,
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        paddingLeft: { xs: 2, md: 2 }, 
+        paddingLeft: { xs: 2, md: 2 },
         paddingRight: { xs: 2, md: 2 },
-        paddingBottom: { xs: "80px", md: 6 }, 
+        paddingBottom: { xs: "80px", md: 6 },
       }}
     >
-      <Container maxWidth="lg" sx={{ width: "100%" ,display: "flex", 
-      flexDirection: "column", 
-      alignItems: "center", }}>
+      <Container maxWidth="lg" sx={{
+        width: "100%", display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}>
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
         >
-          <Box sx={{ display: "flex", alignItems: "center", mb: 2 ,justifyContent: "center",width: "100%"}}>
-            <Typography 
-              variant="h3" 
+          <Box sx={{ display: "flex", alignItems: "center", mb: 2, justifyContent: "center", width: "100%" }}>
+            <Typography
+              variant="h3"
               component="h2"
-              sx={{ 
+              sx={{
                 fontWeight: 700,
                 fontSize: { xs: "2rem", md: "2.5rem" },
                 fontFamily: "'Poppins', sans-serif",
                 background: `linear-gradient(90deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
                 backgroundClip: "text",
-                textFillColor: "transparent",
                 WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                color: "transparent",
                 textShadow: "0px 2px 4px rgba(0,0,0,0.05)",
-                
+                textAlign: "center"
               }}
             >
               Achievements & Recognitions
             </Typography>
+
           </Box>
-          
-          <Typography 
-            variant="h6" 
+
+          <Typography
+            variant="h6"
             component="p"
-            sx={{ 
-              mb: 6, 
+            sx={{
+              mb: 6,
               maxWidth: "700px",
               color: "#555",
               fontWeight: 400,
@@ -165,38 +167,38 @@ const Achievements = () => {
                 <motion.div key={index} variants={fadeInUp}>
                   <TimelineItem>
                     <TimelineOppositeContent sx={{ m: 'auto 0' }}>
-                      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
-                        <Chip 
-                          label={achievement.year} 
-                          sx={{ 
-                            fontWeight: 600, 
+                      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                        <Chip
+                          label={achievement.year}
+                          sx={{
+                            fontWeight: 600,
                             backgroundColor: `${getCategoryColor(achievement.category)}15`,
                             color: getCategoryColor(achievement.category),
                             mb: 1,
                             fontFamily: "'Poppins', sans-serif",
-                          }} 
+                          }}
                         />
-                        <Chip 
-                          label={achievement.category} 
+                        <Chip
+                          label={achievement.category}
                           size="small"
-                          sx={{ 
-                            fontWeight: 500, 
+                          sx={{
+                            fontWeight: 500,
                             backgroundColor: `${getCategoryColor(achievement.category)}10`,
                             color: getCategoryColor(achievement.category),
                             border: `1px solid ${getCategoryColor(achievement.category)}30`,
                             fontFamily: "'Poppins', sans-serif",
-                          }} 
+                          }}
                         />
                       </Box>
                     </TimelineOppositeContent>
-                    
+
                     <TimelineSeparator>
-                      <TimelineConnector sx={{ 
+                      <TimelineConnector sx={{
                         backgroundColor: index === 0 ? 'transparent' : getCategoryColor(achievement.category),
                         opacity: 0.3
                       }} />
-                      <TimelineDot 
-                        sx={{ 
+                      <TimelineDot
+                        sx={{
                           backgroundColor: getCategoryColor(achievement.category),
                           boxShadow: `0 0 15px ${getCategoryColor(achievement.category)}80`,
                           p: 1
@@ -204,12 +206,12 @@ const Achievements = () => {
                       >
                         {achievement.icon}
                       </TimelineDot>
-                      <TimelineConnector sx={{ 
+                      <TimelineConnector sx={{
                         backgroundColor: index === achievements.length - 1 ? 'transparent' : getCategoryColor(achievement.category),
                         opacity: 0.3
                       }} />
                     </TimelineSeparator>
-                    
+
                     <TimelineContent sx={{ py: '12px', px: 2 }}>
                       <Paper
                         elevation={0}
@@ -227,11 +229,11 @@ const Achievements = () => {
                           }
                         }}
                       >
-                        <Typography 
-                          variant="h6" 
-                          component="h3" 
+                        <Typography
+                          variant="h6"
+                          component="h3"
                           fontWeight="700"
-                          sx={{ 
+                          sx={{
                             color: getCategoryColor(achievement.category),
                             mb: 1,
                             fontFamily: "'Poppins', sans-serif",
@@ -240,9 +242,9 @@ const Achievements = () => {
                           {achievement.event}
                         </Typography>
                         <Divider sx={{ mb: 2, borderColor: `${getCategoryColor(achievement.category)}30` }} />
-                        <Typography 
-                          variant="body2" 
-                          sx={{ 
+                        <Typography
+                          variant="body2"
+                          sx={{
                             lineHeight: 1.7,
                             fontSize: "0.95rem",
                             fontFamily: "'Poppins', sans-serif",

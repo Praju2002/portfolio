@@ -16,6 +16,10 @@ import mazeimg from "/maze.png";
 import textimg from "/text.png";
 import soothesphereimg from "/soothesphere.png";
 
+const primaryColor = "#ba55d3";
+const secondaryColor = "#9932cc";
+const backgroundColor = "#f8f0f8";
+
 const projects = [
   {
     title: "Maze Generator",
@@ -33,7 +37,7 @@ const projects = [
   },
   {
     title: "Gantabya",
-    image: "/gantabya.jpg", 
+    image: "/gantabya.jpg",
     desc: "Hyper-localized travel app using OpenStreetMap and real-time updates. Discover hidden gems with personalized recommendations.",
     tags: ["React", "OpenStreetMap"],
     github: "https://github.com/Abhiyan31415/Elsendero.git"
@@ -67,20 +71,29 @@ const itemVariants = {
 
 const Projects = () => {
   return (
-    <Box sx={{ py: { xs: 6, md: 10 }, background: "#f8f0f8" }}>
+    <Box sx={{ py: { xs: 6, md: 10 }, background: backgroundColor }}>
       <Container maxWidth="lg">
-        <Typography
-          variant="h2"
-          align="center"
-          sx={{
-            mb: 4,
-            fontWeight: 700,
-            color: "#9932cc",
-            letterSpacing: "-0.02em"
-          }}
-        >
-          Featured Projects
-        </Typography>
+        <motion.div initial="hidden" animate="visible" variants={itemVariants}>
+          <Typography
+            variant="h3"
+            component="h2"
+            align="center"
+            sx={{
+              fontWeight: 700,
+              fontSize: { xs: "2rem", md: "2.5rem" },
+              fontFamily: "'Poppins', sans-serif",
+              background: `linear-gradient(90deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              color: "transparent",
+              textShadow: "0px 2px 4px rgba(0,0,0,0.05)",
+              mb: 4
+            }}
+          >
+            Featured Projects
+          </Typography>
+        </motion.div>
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -91,7 +104,22 @@ const Projects = () => {
             {projects.map((project, index) => (
               <Grid item key={index} xs={12} sm={6} md={4}>
                 <motion.div variants={itemVariants}>
-                  <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+                  <Card
+                    sx={{
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.1)",
+                      borderRadius: "12px",
+                      overflow: "hidden",
+                      border: `1px solid ${primaryColor}22`,
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        boxShadow: `0px 15px 30px ${primaryColor}40`,
+                        transform: "translateY(-5px)"
+                      }
+                    }}
+                  >
                     {project.image && (
                       <CardMedia
                         component="img"
@@ -102,22 +130,53 @@ const Projects = () => {
                     )}
 
                     <CardContent sx={{ flexGrow: 1 }}>
-                      <Typography variant="h6" fontWeight={700}>
+                      <Typography
+                        variant="h6"
+                        fontWeight={700}
+                        sx={{ color: primaryColor }}
+                      >
                         {project.title}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary" sx={{ mt: 1, mb: 2 }}>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{
+                          mt: 1,
+                          mb: 2,
+                          fontSize: "0.95rem",
+                          lineHeight: 1.7
+                        }}
+                      >
                         {project.desc}
                       </Typography>
 
                       <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
                         {project.tags.map((tag, i) => (
-                          <Chip key={i} label={tag} size="small" sx={{ bgcolor: "#ba55d3", color: "#fff" }} />
+                          <Chip
+                            key={i}
+                            label={tag}
+                            size="small"
+                            sx={{
+                              backgroundColor: `${primaryColor}15`,
+                              color: primaryColor,
+                              border: `1px solid ${primaryColor}30`,
+                              fontWeight: 500
+                            }}
+                          />
                         ))}
                       </Box>
                     </CardContent>
 
-                    <Box sx={{ p: 2, display: "flex", justifyContent: "space-between" }}>
-                      <IconButton component="a" href={project.github} target="_blank" sx={{ color: "#9932cc" }}>
+                    <Box sx={{ p: 2, display: "flex", justifyContent: "flex-end" }}>
+                      <IconButton
+                        component="a"
+                        href={project.github}
+                        target="_blank"
+                        sx={{
+                          color: primaryColor,
+                          "&:hover": { color: secondaryColor }
+                        }}
+                      >
                         <GitHubIcon />
                       </IconButton>
                     </Box>
