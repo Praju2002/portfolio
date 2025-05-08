@@ -7,7 +7,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import CodeIcon from '@mui/icons-material/Code';
 import SchoolIcon from '@mui/icons-material/School';
 import PersonIcon from '@mui/icons-material/Person';
-import img from "../assets/praju.jpg";
+// import img from "../assets/praju.jpg";
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -217,7 +217,7 @@ const AboutMe = () => {
                     }}
                   >
                     <Avatar 
-                      src={img}
+                     src="/praju.jpg" 
                       alt="Praju Khanal"
                       sx={{ 
                         width: 200, 
