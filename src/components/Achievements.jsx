@@ -17,6 +17,14 @@ const Achievements = () => {
 
   const achievements = [
     {
+      year: "2025",
+      event: "Best Project Award – Minor Project.",
+      description: "Awarded for building a Maze Generator & Solver using the MERN stack and D3.js, featuring interactive step-by-step animations, HDFS-based solving, and performance analytics like number of intersections, dead ends, and steps taken.",
+      icon: <EmojiEventsIcon />,
+      category: "Academic"
+    },
+
+    {
       year: "2024",
       event: "1st Place – Intra-College Coding Competition",
       description: "Developed a real-time collaborative code editor with integrated compiler and version control system.",
@@ -25,17 +33,17 @@ const Achievements = () => {
     },
     {
       year: "2024",
-      event: "Participant – KU Hackathon",
-      description: "Developed an interactive travel app utilizing OpenStreetMap API with custom route planning features.",
-      icon: <GroupsIcon />,
-      category: "Hackathon"
-    },
-    {
-      year: "2024",
       event: "Selected as a Fellow for Women Leaders in Technology (WLiT)",
       description: "One of 15 selected from over 150+ applicants for this prestigious technology leadership program.",
       icon: <EmojiEventsIcon />,
       category: "Fellowship"
+    },
+      {
+      year: "2024",
+      event: "Participant – KU Hackathon",
+      description: "Developed an interactive travel app utilizing OpenStreetMap API with custom route planning features.",
+      icon: <GroupsIcon />,
+      category: "Hackathon"
     },
     {
       year: "2024",
@@ -71,11 +79,13 @@ const Achievements = () => {
       case "Competition":
         return primaryColor;
       case "Hackathon":
-        return "#c71585";
-      case "Fellowship":
         return secondaryColor;
+      case "Fellowship":
+        return "#c71585";
       case "Open Source":
         return "#c71585";
+        case "Academic":
+      return "#6a5acd";
       default:
         return primaryColor;
     }
