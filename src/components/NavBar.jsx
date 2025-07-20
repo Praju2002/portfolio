@@ -44,6 +44,14 @@ const Navbar = ({ setActiveSection, activeSection }) => {
   
   const handleNavClick = (section) => {
     console.log("Navigation clicked:", section);
+    const element = document.getElementById(section);
+    if (element) {
+      const offsetTop = element.offsetTop - 20; // Small offset for better positioning
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth"
+      });
+    }
     setActiveSection(section);
   };
 
@@ -268,13 +276,14 @@ const Navbar = ({ setActiveSection, activeSection }) => {
           left: 0,
           width: "100%",
           background: "rgba(250, 240, 250, 0.95)", 
-          backdropFilter: "blur(10px)",
+          backdropFilter: "blur(15px)",
           borderTop: `1px solid ${lightColor}`,
-          boxShadow: "0 -2px 10px rgba(186, 85, 211, 0.1)",
+          boxShadow: "0 -4px 20px rgba(186, 85, 211, 0.15)",
           zIndex: 1000,
           justifyContent: "space-around",
           alignItems: "center",
-          padding: "8px 0",
+          padding: "12px 8px 8px 8px", // Extra top padding for better touch targets
+          borderRadius: "20px 20px 0 0", // Rounded top corners
         }}
       >
         {navItems.map((item) => (

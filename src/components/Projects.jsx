@@ -71,7 +71,17 @@ const itemVariants = {
 
 const Projects = () => {
   return (
-    <Box sx={{ py: { xs: 6, md: 10 }, background: backgroundColor }}>
+    <Box 
+      component="section"
+      id="projects"
+      sx={{ 
+        py: { xs: 8, md: 12 }, 
+        background: backgroundColor,
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
       <Container maxWidth="lg">
         <motion.div initial="hidden" animate="visible" variants={itemVariants}>
           <Typography

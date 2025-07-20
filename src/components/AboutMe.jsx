@@ -81,11 +81,14 @@ const AboutMe = () => {
     <ThemeProvider theme={theme}>
       <Box 
         component="section"
+        id="about"
         sx={{ 
           py: 8, 
           position: "relative",
           background: `linear-gradient(135deg, ${theme.palette.background.default} 0%, #f3e5f5 100%)`,
           minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
         }}
       >
        

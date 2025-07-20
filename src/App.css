@@ -1,0 +1,53 @@
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ba55d3;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9932cc;
+}
+
+/* Prevent text selection on UI elements */
+.navbar-button, .nav-item {
+  user-select: none;
+}
+
+/* Ensure consistent font rendering */
+* {
+  font-family: 'Poppins', 'Roboto', 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Section transition effects */
+section {
+  scroll-margin-top: 80px; /* Offset for fixed navbar */
+}
+
+/* Smooth focus transitions */
+*:focus {
+  outline: 2px solid #ba55d3;
+  outline-offset: 2px;
+}
+
+/* Hide scrollbar for a cleaner look on mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}

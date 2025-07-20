@@ -81,11 +81,18 @@ const Contact = () => {
   ];
 
   return (
-    <Box sx={{
-      backgroundColor: "#f8f0f8", 
-      py: { xs: 6, md: 12 },
-      overflow: "hidden"
-    }}>
+    <Box 
+      component="section"
+      id="contact"
+      sx={{
+        backgroundColor: "#f8f0f8", 
+        py: { xs: 8, md: 12 },
+        overflow: "hidden",
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
       <Container maxWidth="lg">
         <motion.div
           variants={containerVariants}
