@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./components/NavBar";
+import NavBar from "./components/NavBar";
 import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
@@ -9,14 +9,13 @@ import ScrollToTop from "./components/ScrollToTop";
 import { Box, ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 import "./App.css";
 
-// Create a custom theme
 const theme = createTheme({
   palette: {
-    primary: { main: "#ba55d3" },
-    secondary: { main: "#9932cc" },
-    background: { default: "#f8f0f8" },
+    primary: { main: "#111" },
+    secondary: { main: "#888" },
+    background: { default: "#fff" },
   },
-  typography: { fontFamily: "'Poppins', 'Roboto', 'Arial', sans-serif" },
+  typography: { fontFamily: "'SF Pro Display', 'Poppins', 'Roboto', 'Arial', sans-serif" },
   components: {
     MuiButton: {
       styleOverrides: {
@@ -24,7 +23,14 @@ const theme = createTheme({
           borderRadius: 12,
           textTransform: "none",
           boxShadow: "none",
-          "&:hover": { boxShadow: "0px 4px 12px rgba(186, 85, 211, 0.25)" },
+          fontWeight: 500,
+          fontSize: "1.1rem",
+          padding: "0.75rem 2rem",
+          letterSpacing: 0.5,
+          background: "#f5f5f7",
+          color: "#111",
+          transition: "all 0.2s cubic-bezier(.4,0,.2,1)",
+          "&:hover": { boxShadow: "0 4px 24px rgba(0,0,0,0.08)", background: "#e5e5ea" },
         },
       },
     },
@@ -33,66 +39,43 @@ const theme = createTheme({
 });
 
 const App = () => {
-  const [activeSection, setActiveSection] = useState("about");
-
-  // Handle scroll-based active section detection
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["about", "projects", "achievements", "contact"];
-      const scrollPosition = window.scrollY + 100; // Offset for navbar
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ 
-        minHeight: "100vh", 
+      <NavBar />
+      <Box sx={{
+        minHeight: "100vh",
         bgcolor: "background.default",
         position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "100%",
+        px: { xs: 0, md: 0 },
       }}>
-        {/* Fixed Navigation */}
-        <Navbar setActiveSection={setActiveSection} activeSection={activeSection} />
-        
-        {/* Main scrollable content */}
-        <Box sx={{ 
-          ml: { xs: 0, md: "240px" }, // Margin for desktop sidebar
-          transition: "margin 0.3s ease",
-        }}>
-          {/* About Section */}
-          <Box id="about" sx={{ minHeight: "100vh" }}>
-            <AboutMe />
-          </Box>
-
-          {/* Projects Section */}
-          <Box id="projects" sx={{ minHeight: "100vh" }}>
-            <Projects />
-          </Box>
-
-          {/* Achievements Section */}
-          <Box id="achievements" sx={{ minHeight: "100vh" }}>
-            <Achievements />
-          </Box>
-
-          {/* Contact Section */}
-          <Box id="contact" sx={{ minHeight: "100vh" }}>
-            <Contact />
-          </Box>
-
-          {/* Footer */}
-          <Footer />
+        {/* About Section */}
+        <Box id="about" sx={{ width: "100%", maxWidth: 1200, minHeight: "100vh", py: 8 }}>
+          <AboutMe />
         </Box>
+
+        {/* Projects Section */}
+        <Box id="projects" sx={{ width: "100%", maxWidth: 1200, minHeight: "100vh", py: 8 }}>
+          <Projects />
+        </Box>
+
+        {/* Achievements Section */}
+        <Box id="achievements" sx={{ width: "100%", maxWidth: 1200, minHeight: "100vh", py: 8 }}>
+          <Achievements />
+        </Box>
+
+        {/* Contact Section */}
+        <Box id="contact" sx={{ width: "100%", maxWidth: 1200, minHeight: "100vh", py: 8 }}>
+          <Contact />
+        </Box>
+
+        {/* Footer */}
+        <Footer />
 
         {/* Scroll to Top Button */}
         <ScrollToTop />

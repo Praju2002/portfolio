@@ -30,11 +30,11 @@ const ScrollToTop = () => {
           position: "fixed",
           bottom: { xs: 80, md: 20 },
           right: 20,
-          bgcolor: "#ba55d3",
+          bgcolor: "#282629ff",
           color: "white",
           zIndex: 1000,
           "&:hover": {
-            bgcolor: "#9932cc",
+            bgcolor: "#7b8187ff",
             transform: "scale(1.1)",
           },
           transition: "all 0.3s ease",

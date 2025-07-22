@@ -14,12 +14,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ba55d3;
+  background: #4f4c50;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9932cc;
+  background: #262527;
 }
 
 /* Prevent text selection on UI elements */

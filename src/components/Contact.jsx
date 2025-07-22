@@ -20,7 +20,6 @@ import MessageIcon from "@mui/icons-material/Message";
 import SendIcon from "@mui/icons-material/Send";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
 
 const Contact = () => {
   const theme = useTheme();
@@ -69,7 +68,7 @@ const Contact = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.645, 0.045, 0.355, 1.000] 
+        ease: [0.645, 0.045, 0.355, 1.000]
       }
     }
   };
@@ -77,15 +76,18 @@ const Contact = () => {
   const socialLinks = [
     { name: "LinkedIn", icon: <LinkedInIcon fontSize="small" />, url: "https://www.linkedin.com/in/praju-khanal/" },
     { name: "GitHub", icon: <GitHubIcon fontSize="small" />, url: "https://github.com/Praju2002" },
-    // { name: "Twitter", icon: <TwitterIcon fontSize="small" />, url: "https://twitter.com/your-profile" }
   ];
 
+  const accentColor = "#0071e3";
+  const softGray = "#f5f5f7";
+  const borderGray = "#ececec";
+
   return (
-    <Box 
+    <Box
       component="section"
       id="contact"
       sx={{
-        backgroundColor: "#f8f0f8", 
+        backgroundColor: softGray,
         py: { xs: 8, md: 12 },
         overflow: "hidden",
         minHeight: "100vh",
@@ -103,18 +105,18 @@ const Contact = () => {
           <motion.div variants={itemVariants}>
             <Typography
               variant="h2"
-              color="#ba55d3" 
               sx={{
                 textAlign: "center",
                 mb: 1,
-                fontWeight: 700,
+                fontWeight: 800,
+                color: "#111",
+                fontSize: { xs: "2rem", md: "2.7rem" },
+                letterSpacing: "-0.02em",
+                lineHeight: 1.1,
               }}
             >
               Get in Touch
             </Typography>
-
-
-
             <Typography
               variant="body1"
               color="text.secondary"
@@ -131,61 +133,41 @@ const Contact = () => {
               Fill out the form below and I'll get back to you as soon as possible.
             </Typography>
           </motion.div>
-
           <Grid container spacing={4} alignItems="stretch">
             <Grid item xs={12} md={5}>
               <motion.div variants={itemVariants}>
                 <Paper
-                  elevation={6}
+                  elevation={0}
                   sx={{
                     height: "100%",
-                    p: 4,
-                    borderRadius: 4,
-                    background: `linear-gradient(135deg, #d8bfd8 0%, #ba55d3 100%)`, // Using primary.light to primary.main
-                    color: "white",
+                    p: { xs: 3, md: 4 },
+                    borderRadius: "20px",
+                    background: "#fff",
+                    color: "#222",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
                     position: "relative",
                     overflow: "hidden",
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      top: "-50px",
-                      right: "-50px",
-                      width: "150px",
-                      height: "150px",
-                      backgroundColor: "rgba(255, 255, 255, 0.1)",
-                      borderRadius: "50%"
-                    },
-                    "&::after": {
-                      content: '""',
-                      position: "absolute",
-                      bottom: "-80px",
-                      left: "-80px",
-                      width: "200px",
-                      height: "200px",
-                      backgroundColor: "rgba(255, 255, 255, 0.05)",
-                      borderRadius: "50%"
-                    }
+                    boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
+                    border: `1px solid ${borderGray}`,
                   }}
                 >
                   <Box>
-                    <Typography variant="h5" fontWeight="bold" sx={{ mb: 4, position: "relative", zIndex: 2 }}>
+                    <Typography variant="h5" fontWeight="bold" sx={{ mb: 4, position: "relative", zIndex: 2, color: accentColor }}>
                       Contact Information
                     </Typography>
-
                     <Box sx={{ mb: 4, display: "flex", alignItems: "center", position: "relative", zIndex: 2 }}>
                       <Box
                         sx={{
                           mr: 2,
                           p: 1.5,
                           borderRadius: "50%",
-                          backgroundColor: "rgba(255, 255, 255, 0.2)",
+                          backgroundColor: softGray,
                           display: "flex"
                         }}
                       >
-                        <EmailIcon fontSize="small" />
+                        <EmailIcon fontSize="small" sx={{ color: accentColor }} />
                       </Box>
                       <Box>
                         <Typography variant="body2" sx={{ opacity: 0.8 }}>Email</Typography>
@@ -193,7 +175,6 @@ const Contact = () => {
                       </Box>
                     </Box>
                   </Box>
-
                   <Box sx={{ position: "relative", zIndex: 2 }}>
                     <Typography variant="body2" sx={{ opacity: 0.8, mb: 1 }}>Connect with me</Typography>
                     <Box sx={{ display: "flex", gap: 2, mt: 0.5 }}>
@@ -207,16 +188,17 @@ const Contact = () => {
                           sx={{
                             p: 1.5,
                             borderRadius: "50%",
-                            backgroundColor: "rgba(255, 255, 255, 0.2)",
-                            color: "white",
+                            backgroundColor: softGray,
+                            color: accentColor,
                             textDecoration: "none",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
-                            transition: "all 0.3s ease",
+                            transition: "all 0.2s cubic-bezier(.4,0,.2,1)",
                             "&:hover": {
-                              backgroundColor: "rgba(255, 255, 255, 0.3)",
-                              transform: "translateY(-3px)"
+                              backgroundColor: "#e5e5ea",
+                              color: "#111",
+                              transform: "translateY(-2px)"
                             }
                           }}
                         >
@@ -228,31 +210,30 @@ const Contact = () => {
                 </Paper>
               </motion.div>
             </Grid>
-
             <Grid item xs={12} md={7}>
               <motion.div variants={itemVariants}>
                 <Paper
-                  elevation={6}
+                  elevation={0}
                   component="form"
                   onSubmit={handleSubmit}
                   sx={{
                     p: { xs: 3, md: 5 },
-                    borderRadius: 4,
-                    backgroundColor: "#fcf7fc",
+                    borderRadius: "20px",
+                    backgroundColor: "#fff",
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
+                    boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
+                    border: `1px solid ${borderGray}`,
                   }}
                 >
                   <Typography
                     variant="h5"
-                    color="#ba55d3" 
                     fontWeight="bold"
-                    sx={{ mb: 4 }}
+                    sx={{ mb: 4, color: accentColor }}
                   >
                     Send a Message
                   </Typography>
-
                   <TextField
                     fullWidth
                     label="Full Name"
@@ -263,25 +244,24 @@ const Contact = () => {
                     required
                     sx={{
                       mb: 3,
+                      background: softGray,
+                      borderRadius: 2,
                       "& .MuiOutlinedInput-root": {
                         borderRadius: 2,
-                        "&:hover fieldset": {
-                          borderColor: "#ba55d3", 
-                        },
-                        "&.Mui-focused fieldset": {
-                          borderColor: "#ba55d3",
-                        }
+                        background: softGray,
+                        "& fieldset": { borderColor: borderGray },
+                        "&:hover fieldset": { borderColor: accentColor },
+                        "&.Mui-focused fieldset": { borderColor: accentColor },
                       }
                     }}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
-                          <PersonIcon fontSize="small" sx={{ color: "#ba55d3" }} />
+                          <PersonIcon fontSize="small" sx={{ color: accentColor }} />
                         </InputAdornment>
                       ),
                     }}
                   />
-
                   <TextField
                     fullWidth
                     label="Email Address"
@@ -293,25 +273,24 @@ const Contact = () => {
                     required
                     sx={{
                       mb: 3,
+                      background: softGray,
+                      borderRadius: 2,
                       "& .MuiOutlinedInput-root": {
                         borderRadius: 2,
-                        "&:hover fieldset": {
-                          borderColor: "#ba55d3",
-                        },
-                        "&.Mui-focused fieldset": {
-                          borderColor: "#ba55d3", 
-                        }
+                        background: softGray,
+                        "& fieldset": { borderColor: borderGray },
+                        "&:hover fieldset": { borderColor: accentColor },
+                        "&.Mui-focused fieldset": { borderColor: accentColor },
                       }
                     }}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
-                          <EmailIcon fontSize="small" sx={{ color: "#ba55d3" }} /> {/* Using primary.main */}
+                          <EmailIcon fontSize="small" sx={{ color: accentColor }} />
                         </InputAdornment>
                       ),
                     }}
                   />
-
                   <TextField
                     fullWidth
                     label="Your Message"
@@ -324,25 +303,24 @@ const Contact = () => {
                     required
                     sx={{
                       mb: 4,
+                      background: softGray,
+                      borderRadius: 2,
                       "& .MuiOutlinedInput-root": {
                         borderRadius: 2,
-                        "&:hover fieldset": {
-                          borderColor: "#ba55d3", 
-                        },
-                        "&.Mui-focused fieldset": {
-                          borderColor: "#ba55d3", 
-                        }
+                        background: softGray,
+                        "& fieldset": { borderColor: borderGray },
+                        "&:hover fieldset": { borderColor: accentColor },
+                        "&.Mui-focused fieldset": { borderColor: accentColor },
                       }
                     }}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start" sx={{ alignSelf: "flex-start", mt: 1.5 }}>
-                          <MessageIcon fontSize="small" sx={{ color: "#ba55d3" }} /> 
+                          <MessageIcon fontSize="small" sx={{ color: accentColor }} />
                         </InputAdornment>
                       ),
                     }}
                   />
-
                   <Button
                     variant="contained"
                     type="submit"
@@ -352,15 +330,18 @@ const Contact = () => {
                       py: 1.5,
                       px: 4,
                       borderRadius: 2,
-                      backgroundColor: "#ba55d3", 
+                      backgroundColor: accentColor,
                       color: "white",
-                      fontWeight: "medium",
+                      fontWeight: 500,
                       alignSelf: "flex-start",
-                      transition: "all 0.3s ease",
+                      fontSize: "1.08rem",
+                      transition: "all 0.2s cubic-bezier(.4,0,.2,1)",
+                      boxShadow: "0 2px 8px #e5e5ea",
                       "&:hover": {
-                        backgroundColor: "#9932cc", 
+                        backgroundColor: "#005bb5",
+                        color: "#fff",
                         transform: "translateY(-2px)",
-                        boxShadow: `0 8px 20px rgba(186, 85, 211, 0.3)`,
+                        boxShadow: `0 8px 20px #e5e5ea`,
                       }
                     }}
                   >
@@ -372,7 +353,6 @@ const Contact = () => {
           </Grid>
         </motion.div>
       </Container>
-
       <Snackbar
         open={formStatus.open}
         autoHideDuration={6000}

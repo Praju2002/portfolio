@@ -16,10 +16,6 @@ import mazeimg from "/maze.png";
 import textimg from "/text.png";
 import soothesphereimg from "/soothesphere.png";
 
-const primaryColor = "#ba55d3";
-const secondaryColor = "#9932cc";
-const backgroundColor = "#f8f0f8";
-
 const projects = [
   {
     title: "Maze Generator",
@@ -51,7 +47,7 @@ const projects = [
   }
 ];
 
-// Motion Variants
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -71,12 +67,12 @@ const itemVariants = {
 
 const Projects = () => {
   return (
-    <Box 
+    <Box
       component="section"
       id="projects"
-      sx={{ 
-        py: { xs: 8, md: 12 }, 
-        background: backgroundColor,
+      sx={{
+        py: { xs: 8, md: 12 },
+        background: "#fafafc",
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
@@ -89,45 +85,44 @@ const Projects = () => {
             component="h2"
             align="center"
             sx={{
-              fontWeight: 700,
-              fontSize: { xs: "2rem", md: "2.5rem" },
-              fontFamily: "'Poppins', sans-serif",
-              background: `linear-gradient(90deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
-              textShadow: "0px 2px 4px rgba(0,0,0,0.05)",
-              mb: 4
+              fontWeight: 800,
+              fontSize: { xs: "2rem", md: "2.7rem" },
+              color: "#111",
+              mb: 5,
+              letterSpacing: "-0.02em",
+              lineHeight: 1.1,
             }}
           >
             Featured Projects
           </Typography>
         </motion.div>
-
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={5} justifyContent="center" alignItems="stretch">
             {projects.map((project, index) => (
-              <Grid item key={index} xs={12} sm={6} md={4}>
-                <motion.div variants={itemVariants}>
+              <Grid item key={index} xs={12} sm={6} md={4} sx={{ display: 'flex' }}>
+                <motion.div variants={itemVariants} style={{ display: 'flex', flex: 1 }}>
                   <Card
                     sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.1)",
-                      borderRadius: "12px",
+                      height: '100%',
+                      minHeight: 420,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
+                      borderRadius: "18px",
                       overflow: "hidden",
-                      border: `1px solid ${primaryColor}22`,
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        boxShadow: `0px 15px 30px ${primaryColor}40`,
-                        transform: "translateY(-5px)"
-                      }
+                      border: `1px solid #ececec`,
+                      background: "#fff",
+                      transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+                      '&:hover': {
+                        boxShadow: `0 8px 32px #e5e5ea` ,
+                        transform: "translateY(-6px)"
+                      },
+                      flex: 1,
                     }}
                   >
                     {project.image && (
@@ -138,12 +133,11 @@ const Projects = () => {
                         sx={{ height: 180, objectFit: "cover" }}
                       />
                     )}
-
-                    <CardContent sx={{ flexGrow: 1 }}>
+                    <CardContent sx={{ flexGrow: 1, minHeight: 140, display: 'flex', flexDirection: 'column' }}>
                       <Typography
                         variant="h6"
                         fontWeight={700}
-                        sx={{ color: primaryColor }}
+                        sx={{ color: "#111", fontSize: "1.2rem", mb: 1 }}
                       >
                         {project.title}
                       </Typography>
@@ -151,40 +145,42 @@ const Projects = () => {
                         variant="body2"
                         color="text.secondary"
                         sx={{
-                          mt: 1,
+                          mt: 0.5,
                           mb: 2,
-                          fontSize: "0.95rem",
-                          lineHeight: 1.7
+                          fontSize: "1.05rem",
+                          lineHeight: 1.7,
+                          flexGrow: 1,
                         }}
                       >
                         {project.desc}
                       </Typography>
-
-                      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 'auto' }}>
                         {project.tags.map((tag, i) => (
                           <Chip
                             key={i}
                             label={tag}
                             size="small"
                             sx={{
-                              backgroundColor: `${primaryColor}15`,
-                              color: primaryColor,
-                              border: `1px solid ${primaryColor}30`,
-                              fontWeight: 500
+                              backgroundColor: "#f5f5f7",
+                              color: "#222",
+                              border: `1px solid #ececec`,
+                              fontWeight: 500,
+                              fontSize: "0.98rem",
+                              boxShadow: "none"
                             }}
                           />
                         ))}
                       </Box>
                     </CardContent>
-
-                    <Box sx={{ p: 2, display: "flex", justifyContent: "flex-end" }}>
+                    <Box sx={{ p: 2, display: "flex", justifyContent: "flex-end", mt: 'auto' }}>
                       <IconButton
                         component="a"
                         href={project.github}
                         target="_blank"
                         sx={{
-                          color: primaryColor,
-                          "&:hover": { color: secondaryColor }
+                          color: "#222",
+                          transition: "color 0.2s, background 0.2s",
+                          '&:hover': { color: "#0071e3", background: "#f5f5f7" }
                         }}
                       >
                         <GitHubIcon />

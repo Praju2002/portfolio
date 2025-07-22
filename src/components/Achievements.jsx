@@ -8,12 +8,9 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
 const Achievements = () => {
-  const primaryColor = "#ba55d3";
-  const secondaryColor = "#9932cc";
-  const lightColor = "#d8bfd8";
-  const textOnPrimaryColor = "#ffffff";
-  const backgroundColor = "#f8f0f8";
-  const paperColor = "#fcf7fc";
+  const accentColor = "#0071e3";
+  const softGray = "#f5f5f7";
+  const borderGray = "#ececec";
 
   const achievements = [
     {
@@ -23,7 +20,6 @@ const Achievements = () => {
       icon: <EmojiEventsIcon />,
       category: "Academic"
     },
-
     {
       year: "2024",
       event: "1st Place – Intra-College Coding Competition",
@@ -38,7 +34,7 @@ const Achievements = () => {
       icon: <EmojiEventsIcon />,
       category: "Fellowship"
     },
-      {
+    {
       year: "2024",
       event: "Participant – KU Hackathon",
       description: "Developed an interactive travel app utilizing OpenStreetMap API with custom route planning features.",
@@ -54,90 +50,48 @@ const Achievements = () => {
     },
   ];
 
-
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
-
   const staggerItems = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
   };
-
-  const getCategoryColor = (category) => {
-    switch (category) {
-      case "Competition":
-        return primaryColor;
-      case "Hackathon":
-        return secondaryColor;
-      case "Fellowship":
-        return "#c71585";
-      case "Open Source":
-        return "#c71585";
-        case "Academic":
-      return "#6a5acd";
-      default:
-        return primaryColor;
-    }
-  };
+ 
+  const getCategoryColor = () => accentColor;
 
   return (
     <Box
       component="section"
       id="achievements"
       sx={{
-        py: 6,
-        position: "relative",
-        background: `linear-gradient(135deg, ${backgroundColor} 0%, #ffeef5 100%)`,
+        py: { xs: 6, md: 10 },
+        background: softGray,
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        paddingLeft: { xs: 2, md: 2 },
-        paddingRight: { xs: 2, md: 2 },
-        paddingBottom: { xs: "80px", md: 6 },
+        px: { xs: 1, md: 2 },
       }}
     >
-      <Container maxWidth="lg" sx={{
-        width: "100%", display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}>
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-        >
+      <Container maxWidth="lg" sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
           <Box sx={{ display: "flex", alignItems: "center", mb: 2, justifyContent: "center", width: "100%" }}>
             <Typography
               variant="h3"
               component="h2"
               sx={{
-                fontWeight: 700,
-                fontSize: { xs: "2rem", md: "2.5rem" },
-                fontFamily: "'Poppins', sans-serif",
-                background: `linear-gradient(90deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                color: "transparent",
-                textShadow: "0px 2px 4px rgba(0,0,0,0.05)",
-                textAlign: "center"
+                fontWeight: 800,
+                fontSize: { xs: "2rem", md: "2.7rem" },
+                color: "#111",
+                textAlign: "center",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.1,
               }}
             >
               Achievements & Recognitions
             </Typography>
-
           </Box>
-
           <Typography
             variant="h6"
             component="p"
@@ -146,7 +100,6 @@ const Achievements = () => {
               maxWidth: "700px",
               color: "#555",
               fontWeight: 400,
-              fontFamily: "'Poppins', sans-serif",
               fontSize: "1.1rem",
               textAlign: "center"
             }}
@@ -154,24 +107,18 @@ const Achievements = () => {
             A timeline of my professional journey and key milestones that have shaped my development career
           </Typography>
         </motion.div>
-
         <Paper
           elevation={0}
           sx={{
             p: { xs: 2, md: 5 },
-            background: "rgba(255, 255, 255, 0.85)",
-            backdropFilter: "blur(10px)",
-            borderRadius: "16px",
-            boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)",
-            border: `1px solid ${primaryColor}22`,
+            background: "#fff",
+            borderRadius: "20px",
+            boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
+            border: `1px solid ${borderGray}`,
             overflow: "hidden"
           }}
         >
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerItems}
-          >
+          <motion.div initial="hidden" animate="visible" variants={staggerItems}>
             <Timeline position="alternate">
               {achievements.map((achievement, index) => (
                 <motion.div key={index} variants={fadeInUp}>
@@ -182,10 +129,10 @@ const Achievements = () => {
                           label={achievement.year}
                           sx={{
                             fontWeight: 600,
-                            backgroundColor: `${getCategoryColor(achievement.category)}15`,
-                            color: getCategoryColor(achievement.category),
+                            backgroundColor: softGray,
+                            color: accentColor,
                             mb: 1,
-                            fontFamily: "'Poppins', sans-serif",
+                            fontSize: "1rem",
                           }}
                         />
                         <Chip
@@ -193,35 +140,27 @@ const Achievements = () => {
                           size="small"
                           sx={{
                             fontWeight: 500,
-                            backgroundColor: `${getCategoryColor(achievement.category)}10`,
-                            color: getCategoryColor(achievement.category),
-                            border: `1px solid ${getCategoryColor(achievement.category)}30`,
-                            fontFamily: "'Poppins', sans-serif",
+                            backgroundColor: "#f0f4f8",
+                            color: "#222",
+                            border: `1px solid ${borderGray}`,
+                            fontSize: "0.95rem",
                           }}
                         />
                       </Box>
                     </TimelineOppositeContent>
-
                     <TimelineSeparator>
-                      <TimelineConnector sx={{
-                        backgroundColor: index === 0 ? 'transparent' : getCategoryColor(achievement.category),
-                        opacity: 0.3
-                      }} />
+                      <TimelineConnector sx={{ backgroundColor: borderGray, opacity: 0.5 }} />
                       <TimelineDot
                         sx={{
-                          backgroundColor: getCategoryColor(achievement.category),
-                          boxShadow: `0 0 15px ${getCategoryColor(achievement.category)}80`,
+                          backgroundColor: accentColor,
+                          boxShadow: `0 0 12px ${accentColor}22`,
                           p: 1
                         }}
                       >
                         {achievement.icon}
                       </TimelineDot>
-                      <TimelineConnector sx={{
-                        backgroundColor: index === achievements.length - 1 ? 'transparent' : getCategoryColor(achievement.category),
-                        opacity: 0.3
-                      }} />
+                      <TimelineConnector sx={{ backgroundColor: borderGray, opacity: 0.5 }} />
                     </TimelineSeparator>
-
                     <TimelineContent sx={{ py: '12px', px: 2 }}>
                       <Paper
                         elevation={0}
@@ -230,12 +169,12 @@ const Achievements = () => {
                         transition={{ duration: 0.3 }}
                         sx={{
                           p: 3,
-                          backgroundColor: 'rgba(255, 255, 255, 0.85)',
-                          borderRadius: '12px',
-                          border: `1px solid ${getCategoryColor(achievement.category)}20`,
-                          transition: 'all 0.3s ease',
+                          backgroundColor: softGray,
+                          borderRadius: '14px',
+                          border: `1px solid ${borderGray}`,
+                          transition: 'all 0.3s',
                           '&:hover': {
-                            boxShadow: `0 10px 20px ${getCategoryColor(achievement.category)}20`,
+                            boxShadow: `0 8px 24px #e5e5ea`,
                           }
                         }}
                       >
@@ -244,21 +183,20 @@ const Achievements = () => {
                           component="h3"
                           fontWeight="700"
                           sx={{
-                            color: getCategoryColor(achievement.category),
+                            color: accentColor,
                             mb: 1,
-                            fontFamily: "'Poppins', sans-serif",
+                            fontSize: "1.1rem",
                           }}
                         >
                           {achievement.event}
                         </Typography>
-                        <Divider sx={{ mb: 2, borderColor: `${getCategoryColor(achievement.category)}30` }} />
+                        <Divider sx={{ mb: 2, borderColor: borderGray }} />
                         <Typography
                           variant="body2"
                           sx={{
                             lineHeight: 1.7,
-                            fontSize: "0.95rem",
-                            fontFamily: "'Poppins', sans-serif",
-                            color: "#7a7a8c"
+                            fontSize: "1.05rem",
+                            color: "#555"
                           }}
                         >
                           {achievement.description}
