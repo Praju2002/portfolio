@@ -123,7 +123,7 @@ const Achievements = () => {
               {achievements.map((achievement, index) => (
                 <motion.div key={index} variants={fadeInUp}>
                   <TimelineItem>
-                    <TimelineOppositeContent sx={{ m: 'auto 0' }}>
+                    <TimelineOppositeContent sx={{ m: 'auto 0',display: { xs: 'none', sm: 'block' } }}>
                       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
                         <Chip
                           label={achievement.year}
@@ -168,7 +168,7 @@ const Achievements = () => {
                         whileHover={{ y: -5 }}
                         transition={{ duration: 0.3 }}
                         sx={{
-                          p: 3,
+                          p: { xs: 2, sm: 3 },
                           backgroundColor: softGray,
                           borderRadius: '14px',
                           border: `1px solid ${borderGray}`,

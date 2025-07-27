@@ -52,7 +52,16 @@ const Navbar = () => {
           zIndex: 1201,
         }}
       >
-        <Toolbar sx={{ maxWidth: 1200, mx: "auto", width: "100%", minHeight: 64, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Toolbar sx={{ 
+          maxWidth: 1200, 
+          mx: "auto", 
+          width: "100%", 
+          minHeight: 64, 
+          display: "flex", 
+          alignItems: "center", 
+          justifyContent: "center",
+          px: { xs: 2, sm: 3, md: 4 }
+        }}>
           {/* Logo/Name */}
           {/* <Typography
             variant="h6"
