@@ -76,9 +76,10 @@ const Projects = () => {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
         <motion.div initial="hidden" animate="visible" variants={itemVariants}>
           <Typography
             variant="h3"
@@ -101,8 +102,9 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
         >
-          <Grid container spacing={5} justifyContent="center" alignItems="stretch">
+          <Grid container spacing={5} sx={{ justifyContent: "center", alignItems: "stretch", width: "100%", maxWidth: "100%" }}>
             {projects.map((project, index) => (
               <Grid item key={index} xs={12} sm={6} md={4} sx={{ display: 'flex' }}>
                 <motion.div variants={itemVariants} style={{ display: 'flex', flex: 1 }}>

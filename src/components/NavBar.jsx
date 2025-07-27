@@ -49,6 +49,7 @@ const Navbar = () => {
           color: "#111",
           boxShadow: "0 2px 16px 0 rgba(0,0,0,0.04)",
           borderBottom: "1px solid #ececec",
+          borderRadius: 0,
           zIndex: 1201,
         }}
       >
@@ -59,7 +60,7 @@ const Navbar = () => {
           minHeight: 64, 
           display: "flex", 
           alignItems: "center", 
-          justifyContent: "center",
+          justifyContent: "space-between",
           px: { xs: 2, sm: 3, md: 4 }
         }}>
           {/* Logo/Name */}
@@ -81,40 +82,69 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           {!isMobile && (
-            <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
-              {navItems.map((item) => (
+            <>
+              <Box sx={{ flex: 1 }} /> {/* Spacer for left side */}
+              <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+                {navItems.map((item) => (
+                  <Button
+                    key={item.to}
+                    onClick={() => handleNavClick(item.to)}
+                    sx={{
+                      color: "#222",
+                      fontWeight: 600,
+                      fontSize: "1.08rem",
+                      textTransform: "none",
+                      px: 2.5,
+                      py: 1.2,
+                      borderRadius: 2,
+                      transition: "all 0.2s cubic-bezier(.4,0,.2,1)",
+                      '&:hover': {
+                        background: "#f5f5f7",
+                        color: "#0071e3",
+                      },
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                ))}
                 <Button
-                  key={item.to}
-                  onClick={() => handleNavClick(item.to)}
+                  onClick={() => window.open('/Praju_cv.pdf', '_blank')}
                   sx={{
-                    color: "#222",
+                    ml: 2,
+                    background: "#0071e3",
+                    color: "#fff",
                     fontWeight: 600,
-                    fontSize: "1.08rem",
-                    textTransform: "none",
-                    borderRadius: 2,
                     px: 2.5,
                     py: 1.2,
+                    textTransform: "none",
+                    borderRadius: 2,
+                    boxShadow: "0 2px 8px #e5e5ea",
                     transition: "all 0.2s cubic-bezier(.4,0,.2,1)",
                     '&:hover': {
-                      background: "#f5f5f7",
-                      color: "#0071e3",
+                      background: "#005bb5",
                     },
                   }}
                 >
-                  {item.label}
+                  Download Resume
                 </Button>
-              ))}
+              </Box>
+            </>
+          )}
+
+          {/* Mobile Nav */}
+          {isMobile && (
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, ml: "auto", pr: 1 }}>
               <Button
                 onClick={() => window.open('/Praju_cv.pdf', '_blank')}
                 sx={{
-                  ml: 2,
                   background: "#0071e3",
                   color: "#fff",
                   fontWeight: 600,
-                  borderRadius: 2,
-                  px: 2.5,
-                  py: 1.2,
+                  px: 2,
+                  py: 1,
                   textTransform: "none",
+                  fontSize: "0.9rem",
+                  borderRadius: 2,
                   boxShadow: "0 2px 8px #e5e5ea",
                   transition: "all 0.2s cubic-bezier(.4,0,.2,1)",
                   '&:hover': {
@@ -122,22 +152,18 @@ const Navbar = () => {
                   },
                 }}
               >
-                Download Resume
+                Resume
               </Button>
+              <IconButton
+                edge="end"
+                color="inherit"
+                aria-label="menu"
+                onClick={() => setDrawerOpen(true)}
+                sx={{ ml: 1, borderRadius: 2, mr: 1 }}
+              >
+                <MenuIcon fontSize="large" />
+              </IconButton>
             </Box>
-          )}
-
-          {/* Hamburger for Mobile */}
-          {isMobile && (
-            <IconButton
-              edge="end"
-              color="inherit"
-              aria-label="menu"
-              onClick={() => setDrawerOpen(true)}
-              sx={{ ml: "auto" }}
-            >
-              <MenuIcon fontSize="large" />
-            </IconButton>
           )}
         </Toolbar>
       </AppBar>
@@ -180,18 +206,6 @@ const Navbar = () => {
               </ListItemButton>
             </ListItem>
           ))}
-          <ListItem disablePadding>
-            <ListItemButton onClick={() => window.open('/Praju_cv.pdf', '_blank')}>
-              <ListItemText
-                primary="Download Resume"
-                primaryTypographyProps={{
-                  fontWeight: 600,
-                  fontSize: "1.08rem",
-                  color: "#0071e3",
-                }}
-              />
-            </ListItemButton>
-          </ListItem>
         </List>
       </Drawer>
      

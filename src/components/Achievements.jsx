@@ -71,6 +71,7 @@ const Achievements = () => {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
         px: { xs: 1, md: 2 },
       }}
     >

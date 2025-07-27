@@ -49,20 +49,11 @@ section {
     width: 4px;
   }
 
- 
   body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
   }
-
-  
-  .MuiContainer-root {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    max-width: 100% !important;
-  }
-
 
   * {
     max-width: 100%;
@@ -73,7 +64,6 @@ section {
     font-size: 0.9rem !important;
     padding: 8px 16px !important;
   }
-
 
   .MuiToolbar-root {
     padding-left: 8px !important;
@@ -91,12 +81,6 @@ section {
 
   .MuiIconButton-root {
     padding: 6px !important;
-  }
-
-
-  .MuiBox-root {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
   }
 }
 

@@ -48,8 +48,8 @@ const AboutMe = () => {
       }}
     >
      
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1, px: { xs: 2, sm: 3, md: 0 } }}>
-        <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
+      <Container maxWidth="lg" sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <motion.div initial="hidden" animate="visible" variants={fadeInUp} style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
           <Typography
             variant="h1"
             component="h1"
@@ -125,7 +125,7 @@ const AboutMe = () => {
         </motion.div>
 
    
-        <Grid container spacing={4} sx={{ justifyContent: "center" }}> 
+        <Grid container spacing={4} sx={{ justifyContent: "center", width: "100%" }}> 
         
           <Grid item xs={12} md={5}>
             <motion.div initial="hidden" animate="visible" variants={fadeInUp} transition={{ delay: 0.1 }}>

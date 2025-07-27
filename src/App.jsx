@@ -55,24 +55,16 @@ const App = () => {
         px: { xs: 0, sm: 1, md: 2, lg: 3 },
       }}>
         {/* About Section */}
-        <Box id="about" sx={{ width: "100%", maxWidth: 1200, minHeight: "100vh", py: { xs: 4, md: 8 }, px: { xs: 2, sm: 3, md: 0 } }}>
-          <AboutMe />
-        </Box>
+        <AboutMe />
 
         {/* Projects Section */}
-        <Box id="projects" sx={{ width: "100%", maxWidth: 1200, minHeight: "100vh", py: { xs: 4, md: 8 }, px: { xs: 2, sm: 3, md: 0 } }}>
-          <Projects />
-        </Box>
+        <Projects />
 
         {/* Achievements Section */}
-        <Box id="achievements" sx={{ width: "100%", maxWidth: 1200, minHeight: "100vh", py: { xs: 4, md: 8 }, px: { xs: 2, sm: 3, md: 0 } }}>
-          <Achievements />
-        </Box>
+        <Achievements />
 
         {/* Contact Section */}
-        <Box id="contact" sx={{ width: "100%", maxWidth: 1200, minHeight: "100vh", py: { xs: 4, md: 8 }, px: { xs: 2, sm: 3, md: 0 } }}>
-          <Contact />
-        </Box>
+        <Contact />
 
         {/* Footer */}
         <Footer />

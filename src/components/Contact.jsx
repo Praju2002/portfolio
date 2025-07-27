@@ -93,14 +93,16 @@ const Contact = () => {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
+          style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
         >
           <motion.div variants={itemVariants}>
             <Typography
@@ -133,7 +135,7 @@ const Contact = () => {
               Fill out the form below and I'll get back to you as soon as possible.
             </Typography>
           </motion.div>
-          <Grid container spacing={4} alignItems="stretch">
+          <Grid container spacing={4} sx={{ alignItems: "stretch", justifyContent: "center", width: "100%" }}>
             <Grid item xs={12} md={5}>
               <motion.div variants={itemVariants}>
                 <Paper
