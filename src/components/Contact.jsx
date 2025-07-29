@@ -91,9 +91,9 @@ const Contact = () => {
         py: { xs: 8, md: 12 },
         overflow: "hidden",
         minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+
+        width: "100%",
+
       }}
     >
       <Container maxWidth="lg" sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>

@@ -42,6 +42,7 @@ const AboutMe = () => {
         background: '#fff',
         display: "flex",
         alignItems: "center",
+        width: "100%",
         justifyContent: "center", 
         position: 'relative',
         overflow: 'hidden',

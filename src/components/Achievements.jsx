@@ -72,6 +72,7 @@ const Achievements = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        width: "100%",
         px: { xs: 1, md: 2 },
       }}
     >
