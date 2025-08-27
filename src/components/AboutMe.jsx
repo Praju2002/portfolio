@@ -81,7 +81,7 @@ const AboutMe = () => {
               fontSize: { xs: "0.95rem", sm: "1.1rem", md: "1.3rem" }, 
             }}
           >
-            MERN Stack Developer | Computer Engineering Student
+            MERN Stack Developer 
           </Typography>
 
           
@@ -239,7 +239,7 @@ const AboutMe = () => {
                 </Box>
                 <Divider sx={{ mb: 2, borderColor: `#ececec` }} />
                 <Typography variant="body1" sx={{ mb: 2, color: "#444", lineHeight: 1.8, fontSize: { xs: "0.9rem", sm: "1rem" } }}>
-                  I'm a passionate Computer Engineering student with a strong drive for developing innovative web applications
+                  I'm a passionate Computer Engineering graduate with a strong drive for developing innovative web applications
                   and solving complex problems. My journey in tech began with curiosity and has evolved into expertise
                   in modern development stacks.
                 </Typography>
