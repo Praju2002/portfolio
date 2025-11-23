@@ -11,30 +11,43 @@ import "./App.css";
 
 const theme = createTheme({
   palette: {
-    primary: { main: "#111" },
-    secondary: { main: "#888" },
-    background: { default: "#fff" },
+    primary: { main: "#9b87c7" },
+    secondary: { main: "#d4c5f9" },
+    background: { default: "#faf8ff" },
   },
-  typography: { fontFamily: "'SF Pro Display', 'Poppins', 'Roboto', 'Arial', sans-serif" },
+  typography: { 
+    fontFamily: "'Playfair Display', 'Georgia', serif",
+    h1: { fontWeight: 700, letterSpacing: '0.02em' },
+    h2: { fontWeight: 700, letterSpacing: '0.02em' },
+    h3: { fontWeight: 700, letterSpacing: '0.01em' },
+    body1: { fontFamily: "'Inter', 'Helvetica', sans-serif", letterSpacing: '0.02em' },
+    body2: { fontFamily: "'Inter', 'Helvetica', sans-serif", letterSpacing: '0.01em' },
+  },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 12,
-          textTransform: "none",
+          borderRadius: 0,
+          textTransform: "uppercase",
           boxShadow: "none",
-          fontWeight: 500,
-          fontSize: "1.1rem",
-          padding: "0.75rem 2rem",
-          letterSpacing: 0.5,
-          background: "#f5f5f7",
-          color: "#111",
-          transition: "all 0.2s cubic-bezier(.4,0,.2,1)",
-          "&:hover": { boxShadow: "0 4px 24px rgba(0,0,0,0.08)", background: "#e5e5ea" },
+          fontWeight: 600,
+          fontSize: "0.875rem",
+          padding: "1rem 3rem",
+          letterSpacing: '0.15em',
+          fontFamily: "'Inter', 'Helvetica', sans-serif",
+          background: "#9b87c7",
+          color: "#fff",
+          transition: "all 0.4s cubic-bezier(.4,0,.2,1)",
+          border: "2px solid #9b87c7",
+          "&:hover": { 
+            background: "#d4c5f9", 
+            color: "#fff",
+            border: "2px solid #d4c5f9",
+          },
         },
       },
     },
-    MuiPaper: { styleOverrides: { root: { borderRadius: 16 } } },
+    MuiPaper: { styleOverrides: { root: { borderRadius: 0 } } },
   },
 });
 
@@ -52,7 +65,9 @@ const App = () => {
         flexDirection: "column",
         alignItems: "center",
         width: "100%",
-        px: { xs: 0, sm: 1, md: 2, lg: 3 },
+        maxWidth: "100vw",
+        overflow: "hidden",
+        px: 0,
       }}>
         {/* About Section */}
         <AboutMe />

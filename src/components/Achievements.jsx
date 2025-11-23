@@ -8,9 +8,9 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
 const Achievements = () => {
-  const accentColor = "#0071e3";
-  const softGray = "#f5f5f7";
-  const borderGray = "#ececec";
+  const accentColor = "#9b87c7";
+  const softGray = "#f9f7ff";
+  const borderGray = "#d4c5f9";
 
   const achievements = [
     {
@@ -66,8 +66,8 @@ const Achievements = () => {
       component="section"
       id="achievements"
       sx={{
-        py: { xs: 6, md: 10 },
-        background: softGray,
+        py: { xs: 12, md: 16 },
+        background: "#ffffff",
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
@@ -83,12 +83,13 @@ const Achievements = () => {
               variant="h3"
               component="h2"
               sx={{
-                fontWeight: 800,
-                fontSize: { xs: "2rem", md: "2.7rem" },
-                color: "#111",
+                fontWeight: 700,
+                fontSize: { xs: "2.5rem", md: "3.5rem" },
+                color: "#7e5fa6",
                 textAlign: "center",
-                letterSpacing: "-0.02em",
-                lineHeight: 1.1,
+                letterSpacing: "0.02em",
+                lineHeight: 1,
+                fontFamily: "'Playfair Display', serif",
               }}
             >
               Achievements & Recognitions
@@ -98,12 +99,14 @@ const Achievements = () => {
             variant="h6"
             component="p"
             sx={{
-              mb: 6,
+              mb: 8,
               maxWidth: "700px",
               color: "#555",
               fontWeight: 400,
-              fontSize: "1.1rem",
-              textAlign: "center"
+              fontSize: "1rem",
+              textAlign: "center",
+              fontFamily: "'Inter', sans-serif",
+              letterSpacing: '0.02em',
             }}
           >
             A timeline of my professional journey and key milestones that have shaped my development career

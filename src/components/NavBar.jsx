@@ -33,7 +33,7 @@ const Navbar = () => {
   const handleNavClick = (section) => {
     const element = document.getElementById(section);
     if (element) {
-      const offsetTop = element.offsetTop - 64; 
+      const offsetTop = element.offsetTop - 64;
       window.scrollTo({ top: offsetTop, behavior: "smooth" });
     }
     setDrawerOpen(false);
@@ -45,23 +45,24 @@ const Navbar = () => {
         position="fixed"
         elevation={0}
         sx={{
-          background: "#fff",
-          color: "#111",
-          boxShadow: "0 2px 16px 0 rgba(0,0,0,0.04)",
-          borderBottom: "1px solid #ececec",
+          background: "#ffffff",
+          backdropFilter: "none",
+          color: "#9b87c7",
+          boxShadow: "none",
+          borderBottom: "1px solid #e8e0f8",
           borderRadius: 0,
           zIndex: 1201,
         }}
       >
-        <Toolbar sx={{ 
-          maxWidth: 1200, 
-          mx: "auto", 
-          width: "100%", 
-          minHeight: 64, 
-          display: "flex", 
-          alignItems: "center", 
+        <Toolbar sx={{
+          maxWidth: 1400,
+          mx: "auto",
+          width: "100%",
+          minHeight: 80,
+          display: "flex",
+          alignItems: "center",
           justifyContent: "space-between",
-          px: { xs: 2, sm: 3, md: 4 }
+          px: { xs: 3, sm: 4, md: 6, lg: 8 }
         }}>
           {/* Logo/Name */}
           {/* <Typography
@@ -90,17 +91,38 @@ const Navbar = () => {
                     key={item.to}
                     onClick={() => handleNavClick(item.to)}
                     sx={{
-                      color: "#222",
-                      fontWeight: 600,
-                      fontSize: "1.08rem",
-                      textTransform: "none",
-                      px: 2.5,
-                      py: 1.2,
-                      borderRadius: 2,
-                      transition: "all 0.2s cubic-bezier(.4,0,.2,1)",
+                      color: "#9b87c7",
+                      fontWeight: 500,
+                      background: "transparent",
+                      // fontSize: "0.813rem",
+                      textTransform: "uppercase",
+                      letterSpacing: '0.15em',
+                      fontFamily: "'Inter', sans-serif",
+                      px: 2,
+                      py: 1.5,
+                      // borderRadius: 2,
+                      border: "none",
+                      position: "relative",
+                      transition: "all 0.3s ease",
+                      '&:after': {
+                        content: '""',
+                        position: 'absolute',
+                        bottom: 0,
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: 0,
+                        height: '2px',
+                        background: '#9b87c7',
+
+                        transition: 'width 0.3s ease',
+                      },
                       '&:hover': {
-                        background: "#f5f5f7",
-                        color: "#0071e3",
+                        background: "transparent",
+                        border: "none",
+                        color: "#7e5fa6",
+                        '&:after': {
+                          width: '80%',
+                        },
                       },
                     }}
                   >
@@ -110,22 +132,42 @@ const Navbar = () => {
                 <Button
                   onClick={() => window.open('/Praju_cv.pdf', '_blank')}
                   sx={{
-                    ml: 2,
-                    background: "#0071e3",
-                    color: "#fff",
-                    fontWeight: 600,
-                    px: 2.5,
-                    py: 1.2,
-                    textTransform: "none",
-                    borderRadius: 2,
-                    boxShadow: "0 2px 8px #e5e5ea",
-                    transition: "all 0.2s cubic-bezier(.4,0,.2,1)",
+                    color: "#ffffff",
+                    fontWeight: 500,
+                    // background: "transparent",
+                    // fontSize: "0.813rem",
+                    textTransform: "uppercase",
+                    letterSpacing: '0.15em',
+                    fontFamily: "'Inter', sans-serif",
+                    px: 2,
+                    py: 1.5,
+                    
+                    // borderRadius: 2,
+                    position: "relative",
+                    transition: "all 0.3s ease",
+                    '&:after': {
+                      content: '""',
+                      position: 'absolute',
+                      bottom: 0,
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      width: 0,
+                      height: '2px',
+                      background: '#9b87c7',
+
+                      transition: 'width 0.3s ease',
+                    },
                     '&:hover': {
-                      background: "#005bb5",
+                      background: "transparent",
+                      color: "#7e5fa6",
+                      '&:after': {
+                        width: '80%',
+                      },
+
                     },
                   }}
                 >
-                  Download Resume
+                  Resume
                 </Button>
               </Box>
             </>
@@ -137,18 +179,21 @@ const Navbar = () => {
               <Button
                 onClick={() => window.open('/Praju_cv.pdf', '_blank')}
                 sx={{
-                  background: "#0071e3",
+                  background: "#9b87c7",
                   color: "#fff",
                   fontWeight: 600,
                   px: 2,
-                  py: 1,
-                  textTransform: "none",
-                  fontSize: "0.9rem",
-                  borderRadius: 2,
-                  boxShadow: "0 2px 8px #e5e5ea",
-                  transition: "all 0.2s cubic-bezier(.4,0,.2,1)",
+                  py: 0.8,
+                  textTransform: "uppercase",
+                  letterSpacing: '0.12em',
+                  fontSize: "0.7rem",
+                  fontFamily: "'Inter', sans-serif",
+                  borderRadius: 0,
+                  border: "2px solid #9b87c7",
+                  transition: "all 0.3s ease",
                   '&:hover': {
-                    background: "#005bb5",
+                    background: "#d4c5f9",
+                    color: "#fff",
                   },
                 }}
               >
@@ -183,7 +228,7 @@ const Navbar = () => {
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", p: 2 }}>
-          <Typography variant="h6" sx={{ fontWeight: 800, color: "#0071e3" }}>
+          <Typography variant="h6" sx={{ fontWeight: 700, color: "#7e5fa6", fontFamily: "'Playfair Display', serif", letterSpacing: '0.02em' }}>
             Menu
           </Typography>
           <IconButton onClick={() => setDrawerOpen(false)}>
@@ -208,7 +253,7 @@ const Navbar = () => {
           ))}
         </List>
       </Drawer>
-     
+
       <Box sx={{ height: 64 }} />
     </>
   );

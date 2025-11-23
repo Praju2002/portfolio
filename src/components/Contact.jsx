@@ -78,17 +78,17 @@ const Contact = () => {
     { name: "GitHub", icon: <GitHubIcon fontSize="small" />, url: "https://github.com/Praju2002" },
   ];
 
-  const accentColor = "#0071e3";
-  const softGray = "#f5f5f7";
-  const borderGray = "#ececec";
+  const accentColor = "#9b87c7";
+  const softGray = "#f9f7ff";
+  const borderGray = "#d4c5f9";
 
   return (
     <Box
       component="section"
       id="contact"
       sx={{
-        backgroundColor: softGray,
-        py: { xs: 8, md: 12 },
+        background: "#f8f8f8",
+        py: { xs: 12, md: 16 },
         overflow: "hidden",
         minHeight: "100vh",
 
@@ -96,7 +96,7 @@ const Contact = () => {
 
       }}
     >
-      <Container maxWidth="lg" sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Container maxWidth="lg" sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 1400, px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -109,12 +109,13 @@ const Contact = () => {
               variant="h2"
               sx={{
                 textAlign: "center",
-                mb: 1,
-                fontWeight: 800,
-                color: "#111",
-                fontSize: { xs: "2rem", md: "2.7rem" },
-                letterSpacing: "-0.02em",
-                lineHeight: 1.1,
+                mb: 2,
+                fontWeight: 700,
+                color: "#7e5fa6",
+                fontSize: { xs: "2.5rem", md: "3.5rem" },
+                letterSpacing: '0.02em',
+                lineHeight: 1,
+                fontFamily: "'Playfair Display', serif",
               }}
             >
               Get in Touch
@@ -124,11 +125,14 @@ const Contact = () => {
               color="text.secondary"
               sx={{
                 textAlign: "center",
-                mb: 6,
+                mb: 8,
                 maxWidth: "700px",
                 mx: "auto",
                 lineHeight: 1.8,
-                px: 2
+                px: 2,
+                color: "#555",
+                fontFamily: "'Inter', sans-serif",
+                letterSpacing: '0.01em',
               }}
             >
               Have a project in mind or want to discuss opportunities? I'd love to hear from you.
@@ -331,19 +335,22 @@ const Contact = () => {
                     sx={{
                       py: 1.5,
                       px: 4,
-                      borderRadius: 2,
-                      backgroundColor: accentColor,
+                      borderRadius: 0,
+                      background: "#9b87c7",
                       color: "white",
-                      fontWeight: 500,
+                      fontWeight: 600,
                       alignSelf: "flex-start",
-                      fontSize: "1.08rem",
-                      transition: "all 0.2s cubic-bezier(.4,0,.2,1)",
-                      boxShadow: "0 2px 8px #e5e5ea",
+                      fontSize: "0.875rem",
+                      textTransform: "uppercase",
+                      letterSpacing: '0.15em',
+                      fontFamily: "'Inter', sans-serif",
+                      border: "2px solid #9b87c7",
+                      transition: "all 0.3s ease",
+                      boxShadow: "none",
                       "&:hover": {
-                        backgroundColor: "#005bb5",
+                        background: "#d4c5f9",
                         color: "#fff",
-                        transform: "translateY(-2px)",
-                        boxShadow: `0 8px 20px #e5e5ea`,
+                        border: "2px solid #d4c5f9",
                       }
                     }}
                   >

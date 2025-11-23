@@ -71,8 +71,8 @@ const Projects = () => {
       component="section"
       id="projects"
       sx={{
-        py: { xs: 8, md: 12 },
-        background: "#fafafc",
+        py: { xs: 12, md: 16 },
+        background: "#f8f8f8",
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
@@ -80,19 +80,20 @@ const Projects = () => {
         justifyContent: "center",
       }}
     >
-      <Container maxWidth="lg" sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Container maxWidth="lg" sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 1400, px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
         <motion.div initial="hidden" animate="visible" variants={itemVariants}>
           <Typography
             variant="h3"
             component="h2"
             align="center"
             sx={{
-              fontWeight: 800,
-              fontSize: { xs: "2rem", md: "2.7rem" },
-              color: "#111",
-              mb: 5,
-              letterSpacing: "-0.02em",
-              lineHeight: 1.1,
+              fontWeight: 700,
+              fontSize: { xs: "2.5rem", md: "3.5rem" },
+              color: "#7e5fa6",
+              mb: 8,
+              letterSpacing: '0.02em',
+              lineHeight: 1,
+              fontFamily: "'Playfair Display', serif",
             }}
           >
             Featured Projects
@@ -115,15 +116,16 @@ const Projects = () => {
                       minHeight: 420,
                       display: 'flex',
                       flexDirection: 'column',
-                      boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
-                      borderRadius: "18px",
+                      boxShadow: "none",
+                      borderRadius: 0,
                       overflow: "hidden",
-                      border: `1px solid #ececec`,
+                      border: `1px solid #d4c5f9`,
                       background: "#fff",
-                      transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+                      transition: "all 0.4s ease",
                       '&:hover': {
-                        boxShadow: `0 8px 32px #e5e5ea` ,
-                        transform: "translateY(-6px)"
+                       boxShadow: "2px 0px 4px rgba(182, 171, 207, 0.3)",
+
+                        transform: "translateY(-4px)"
                       },
                       flex: 1,
                     }}
@@ -140,7 +142,7 @@ const Projects = () => {
                       <Typography
                         variant="h6"
                         fontWeight={700}
-                        sx={{ color: "#111", fontSize: "1.2rem", mb: 1 }}
+                        sx={{ color: "#7e5fa6", fontSize: "1.2rem", mb: 1, letterSpacing: '0.01em' }}
                       >
                         {project.title}
                       </Typography>
@@ -164,9 +166,9 @@ const Projects = () => {
                             label={tag}
                             size="small"
                             sx={{
-                              backgroundColor: "#f5f5f7",
-                              color: "#222",
-                              border: `1px solid #ececec`,
+                              backgroundColor: "#f9f7ff",
+                              color: "#7e5fa6",
+                              border: `1px solid #d4c5f9`,
                               fontWeight: 500,
                               fontSize: "0.98rem",
                               boxShadow: "none"
@@ -181,9 +183,15 @@ const Projects = () => {
                         href={project.github}
                         target="_blank"
                         sx={{
-                          color: "#222",
-                          transition: "color 0.2s, background 0.2s",
-                          '&:hover': { color: "#0071e3", background: "#f5f5f7" }
+                          color: "#9b87c7",
+                          border: "1px solid #d4c5f9",
+                          borderRadius: 0,
+                          transition: "all 0.3s ease",
+                          '&:hover': { 
+                            color: "#fff", 
+                            background: "#9b87c7",
+                            border: "1px solid #9b87c7",
+                          }
                         }}
                       >
                         <GitHubIcon />

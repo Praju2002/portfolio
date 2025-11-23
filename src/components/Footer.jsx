@@ -6,16 +6,17 @@ const Footer = () => {
     <Box
       sx={{
         textAlign: "center",
-        p: 2,
+        p: 4,
         width: "100%",
-        background: "#f5f5f7",
-        color: "#222",
-        borderTop: "1px solid #ececec",
-        fontSize: "1.05rem",
-        letterSpacing: 0.1,
+        background: "#9b87c7",
+        color: "#fff",
+        borderTop: "none",
+        fontSize: "0.875rem",
+        letterSpacing: '0.08em',
+        fontFamily: "'Inter', sans-serif",
       }}
     >
-      <Typography variant="body2" sx={{ fontWeight: 500, fontSize: "1.05rem" }}>
+      <Typography variant="body2" sx={{ fontWeight: 400, fontSize: "0.875rem", fontFamily: "'Inter', sans-serif" }}>
         © 2025 Praju Khanal. All rights reserved.
       </Typography>
     </Box>

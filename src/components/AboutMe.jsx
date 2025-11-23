@@ -38,8 +38,8 @@ const AboutMe = () => {
       component="section"
       id="about"
       sx={{
-        py: { xs: 6, md: 10 }, 
-        background: '#fff',
+        py: { xs: 12, md: 16 }, 
+        background: '#ffffff',
         display: "flex",
         alignItems: "center",
         width: "100%",
@@ -49,19 +49,20 @@ const AboutMe = () => {
       }}
     >
      
-      <Container maxWidth="lg" sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Container maxWidth="lg" sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 1400, px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
           <Typography
             variant="h1"
             component="h1"
             align="center"
             sx={{
-              mb: 1,
-              fontWeight: 800,
-              fontSize: { xs: "2.2rem", sm: "2.8rem", md: "3.5rem" }, 
-              color: "#111",
-              letterSpacing: { xs: "-0.01em", md: "-0.03em" }, 
-              lineHeight: 1.1,
+              mb: 2,
+              fontWeight: 700,
+              fontSize: { xs: "3.5rem", sm: "4.5rem", md: "5.5rem" }, 
+              color: "#7e5fa6",
+              letterSpacing: { xs: "0.02em", md: "0.02em" }, 
+              lineHeight: 1,
+              fontFamily: "'Playfair Display', serif",
             }}
           >
             Praju Khanal
@@ -71,17 +72,18 @@ const AboutMe = () => {
             component="h2"
             align="center"
             sx={{
-              mb: 3,
+              mb: 6,
               maxWidth: "700px",
               mx: "auto",
-              color: "#555",
-              fontWeight: 500,
-              letterSpacing: { xs: "0.03em", md: "0.05em" }, 
+              color: "#000000",
+              fontWeight: 400,
+              letterSpacing: { xs: "0.18em", md: "0.2em" }, 
               textTransform: "uppercase",
-              fontSize: { xs: "0.95rem", sm: "1.1rem", md: "1.3rem" }, 
+              fontSize: { xs: "0.75rem", sm: "0.875rem", md: "1rem" },
+              fontFamily: "'Inter', sans-serif",
             }}
           >
-            MERN Stack Developer 
+            MERN Stack Developer
           </Typography>
 
           
@@ -93,20 +95,31 @@ const AboutMe = () => {
           >
             <Link href="https://github.com/Praju2002" target="_blank" rel="noopener noreferrer">
               <IconButton size="large" sx={{
-                color: "#222",
-                '&:hover': { color: "#0071e3", background: "#f5f5f7" },
-                transition: 'all 0.3s',
-             
-                fontSize: { xs: '1.8rem', sm: '2rem' } 
+               color: "#9b87c7",
+                border: "1px solid #d4c5f9",
+                borderRadius: 0,
+                '&:hover': { 
+                  color: "#fff", 
+                  background: "#9b87c7",
+                  border: "1px solid #9b87c7",
+                },
+                transition: 'all 0.3s ease',
+                fontSize: { xs: '1.8rem', sm: '2rem' }
               }}>
                 <GitHubIcon sx={{ fontSize: 'inherit' }} /> 
               </IconButton>
             </Link>
             <Link href="https://www.linkedin.com/in/praju-khanal/" target="_blank" rel="noopener noreferrer">
               <IconButton size="large" sx={{
-                color: "#222",
-                '&:hover': { color: "#0071e3", background: "#f5f5f7" },
-                transition: 'all 0.3s',
+                color: "#9b87c7",
+                border: "1px solid #d4c5f9",
+                borderRadius: 0,
+                '&:hover': { 
+                  color: "#fff", 
+                  background: "#9b87c7",
+                  border: "1px solid #9b87c7",
+                },
+                transition: 'all 0.3s ease',
                 fontSize: { xs: '1.8rem', sm: '2rem' }
               }}>
                 <LinkedInIcon sx={{ fontSize: 'inherit' }} />
@@ -114,9 +127,15 @@ const AboutMe = () => {
             </Link>
             <Link href="mailto:prajukhanal21@gmail.com" target="_blank" rel="noopener noreferrer">
               <IconButton size="large" sx={{
-                color: "#222",
-                '&:hover': { color: "#0071e3", background: "#f5f5f7" },
-                transition: 'all 0.3s',
+                color: "#9b87c7",
+                border: "1px solid #d4c5f9",
+                borderRadius: 0,
+                '&:hover': { 
+                  color: "#fff", 
+                  background: "#9b87c7",
+                  border: "1px solid #9b87c7",
+                },
+                transition: 'all 0.3s ease',
                 fontSize: { xs: '1.8rem', sm: '2rem' }
               }}>
                 <EmailIcon sx={{ fontSize: 'inherit' }} />
@@ -139,8 +158,8 @@ const AboutMe = () => {
                   height: "100%", 
                   display: "flex",
                   flexDirection: "column",
-                  background: "#fafafc",
-                  border: `1px solid #ececec`,
+                  background: "#f9f7ff",
+                  border: `1px solid #e8e0f8`,
                 }}
               >
               
@@ -151,8 +170,8 @@ const AboutMe = () => {
                     sx={{
                       width: { xs: 120, sm: 160, md: 160 }, 
                       height: { xs: 120, sm: 160, md: 160 },
-                      border: `3px solid #e5e5ea`,
-                      boxShadow: `0 2px 12px #e5e5ea`,
+                      border: `3px solid #d4c5f9`,
+                      boxShadow: `0 2px 12px rgba(212, 197, 249, 0.3)`,
                       mb: 2
                     }}
                   />
@@ -165,27 +184,27 @@ const AboutMe = () => {
                 {/* Personal Info */}
                 <Box sx={{ p: { xs: 2, sm: 3 } }}>
                   <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                    <PersonIcon sx={{ color: "#0071e3", mr: 1, fontSize: { xs: "1.2rem", md: "1.5rem" } }} />
-                    <Typography variant="h6" fontWeight="600" sx={{ fontSize: { xs: "1.1rem", md: "1.25rem" } }}>
+                    <PersonIcon sx={{ color: "#9b87c7", mr: 1, fontSize: { xs: "1.2rem", md: "1.5rem" } }} />
+                    <Typography variant="h6" fontWeight="600" sx={{ fontSize: { xs: "1.1rem", md: "1.25rem" }, fontFamily: "'Playfair Display', serif", letterSpacing: '-0.01em' }}>
                       Personal Info
                     </Typography>
                   </Box>
-                  <Divider sx={{ mb: 2, borderColor: `#ececec` }} />
+                  <Divider sx={{ mb: 2, borderColor: `#e8e0f8` }} />
                   {/* Each info block */}
                   <Box sx={{ mb: 2 }}>
-                    <Typography variant="subtitle1" fontWeight="600" color="#0071e3" sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}>
+                    <Typography variant="subtitle1" fontWeight="600" color="#7e5fa6" sx={{ fontSize: { xs: "0.9rem", md: "1rem" }, fontFamily: "'Inter', sans-serif", letterSpacing: '0.02em' }}>
                       Email
                     </Typography>
-                    <Typography variant="body2" sx={{ fontSize: { xs: "0.85rem", md: "0.9rem" } }}>prajukhanal21@gmail.com</Typography>
+                    <Typography variant="body2" sx={{ fontSize: { xs: "0.85rem", md: "0.9rem" }, color: "#666", letterSpacing: '0.01em' }}>prajukhanal21@gmail.com</Typography>
                   </Box>
                   <Box sx={{ mb: 2 }}>
-                    <Typography variant="subtitle1" fontWeight="600" color="#0071e3" sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}>
+                    <Typography variant="subtitle1" fontWeight="600" color="#7e5fa6" sx={{ fontSize: { xs: "0.9rem", md: "1rem" }, fontFamily: "'Inter', sans-serif", letterSpacing: '0.02em' }}>
                       Location
                     </Typography>
-                    <Typography variant="body2" sx={{ fontSize: { xs: "0.85rem", md: "0.9rem" } }}>Kathmandu, Nepal</Typography>
+                    <Typography variant="body2" sx={{ fontSize: { xs: "0.85rem", md: "0.9rem" }, color: "#666", letterSpacing: '0.02em' }}>Kathmandu, Nepal</Typography>
                   </Box>
                   <Box sx={{ mb: 2 }}>
-                    <Typography variant="subtitle1" fontWeight="600" color="#0071e3" sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}>
+                    <Typography variant="subtitle1" fontWeight="600" color="#7e5fa6" sx={{ fontSize: { xs: "0.9rem", md: "1rem" }, fontFamily: "'Inter', sans-serif", letterSpacing: '0.02em' }}>
                       Languages
                     </Typography>
                     <Typography variant="body2" sx={{ fontSize: { xs: "0.85rem", md: "0.9rem" } }}>English (Fluent), Nepali (Native)</Typography>
@@ -195,14 +214,14 @@ const AboutMe = () => {
                 {/* Education */}
                 <Box sx={{ p: { xs: 2, sm: 3 }, mt: "auto" }}>
                   <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                    <SchoolIcon sx={{ color: "#0071e3", mr: 1, fontSize: { xs: "1.2rem", md: "1.5rem" } }} />
-                    <Typography variant="h6" fontWeight="600" sx={{ fontSize: { xs: "1.1rem", md: "1.25rem" } }}>
+                    <SchoolIcon sx={{ color: "#9b87c7", mr: 1, fontSize: { xs: "1.2rem", md: "1.5rem" } }} />
+                    <Typography variant="h6" fontWeight="600" sx={{ fontSize: { xs: "1.1rem", md: "1.25rem" }, fontFamily: "'Playfair Display', serif", letterSpacing: '-0.01em' }}>
                       Education
                     </Typography>
                   </Box>
-                  <Divider sx={{ mb: 2, borderColor: `#ececec` }} />
+                  <Divider sx={{ mb: 2, borderColor: `#e8e0f8` }} />
                   <Box sx={{ mb: 2 }}>
-                    <Typography variant="subtitle1" fontWeight="600" color="#0071e3" sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}>
+                    <Typography variant="subtitle1" fontWeight="600" color="#7e5fa6" sx={{ fontSize: { xs: "0.9rem", md: "1rem" }, fontFamily: "'Inter', sans-serif", letterSpacing: '0.02em' }}>
                       Bachelor's in Computer Engineering
                     </Typography>
                     <Typography variant="body2" fontWeight="500" sx={{ fontSize: { xs: "0.85rem", md: "0.9rem" } }}>
@@ -232,12 +251,12 @@ const AboutMe = () => {
                 }}
               >
                 <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                  <PersonIcon sx={{ color: "#0071e3", mr: 1, fontSize: { xs: "1.2rem", md: "1.5rem" } }} />
-                  <Typography variant="h5" fontWeight="600" color="#222" sx={{ fontSize: { xs: "1.1rem", md: "1.25rem" } }}>
+                  <PersonIcon sx={{ color: "#9b87c7", mr: 1, fontSize: { xs: "1.2rem", md: "1.5rem" } }} />
+                  <Typography variant="h5" fontWeight="600" color="#7e5fa6" sx={{ fontSize: { xs: "1.1rem", md: "1.25rem" }, fontFamily: "'Playfair Display', serif", letterSpacing: '0.02em' }}>
                     About Me
                   </Typography>
                 </Box>
-                <Divider sx={{ mb: 2, borderColor: `#ececec` }} />
+                <Divider sx={{ mb: 2, borderColor: `#e8e0f8` }} />
                 <Typography variant="body1" sx={{ mb: 2, color: "#444", lineHeight: 1.8, fontSize: { xs: "0.9rem", sm: "1rem" } }}>
                   I'm a passionate Computer Engineering graduate with a strong drive for developing innovative web applications
                   and solving complex problems. My journey in tech began with curiosity and has evolved into expertise
@@ -270,12 +289,12 @@ const AboutMe = () => {
                 }}
               >
                 <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                  <CodeIcon sx={{ color: "#0071e3", mr: 1, fontSize: { xs: "1.2rem", md: "1.5rem" } }} />
-                  <Typography variant="h5" fontWeight="600" color="#222" sx={{ fontSize: { xs: "1.1rem", md: "1.25rem" } }}>
+                  <CodeIcon sx={{ color: "#9b87c7", mr: 1, fontSize: { xs: "1.2rem", md: "1.5rem" } }} />
+                  <Typography variant="h5" fontWeight="600" color="#7e5fa6" sx={{ fontSize: { xs: "1.1rem", md: "1.25rem" }, fontFamily: "'Playfair Display', serif", letterSpacing: '0.02em' }}>
                     Technical Skills
                   </Typography>
                 </Box>
-                <Divider sx={{ mb: 2, borderColor: `#ececec` }} />
+                <Divider sx={{ mb: 2, borderColor: `#e8e0f8` }} />
                 <motion.div variants={staggerContainer} initial="hidden" animate="visible">
                   <Box sx={{ display: "flex", flexWrap: "wrap", gap: { xs: 1, sm: 1.5 } }}> 
                     {skills.map((skill, index) => (
@@ -286,16 +305,17 @@ const AboutMe = () => {
                             py: { xs: 1.5, sm: 2 }, 
                             px: { xs: 1, sm: 1.5 }, 
                             borderRadius: "8px",
-                            backgroundColor: "#f5f5f7",
-                            color: "#222",
+                            backgroundColor: "#f9f7ff",
+                            color: "#7e5fa6",
                             fontSize: { xs: "0.85rem", sm: "1rem" }, 
                             fontWeight: 600,
-                            border: `1px solid #ececec`,
+                            border: `1px solid #d4c5f9`,
                             boxShadow: "none",
                             '&:hover': {
-                              backgroundColor: "#e5e5ea",
+                              backgroundColor: "#d4c5f9",
+                              color: "#fff",
                               transform: "translateY(-2px)",
-                              boxShadow: `0 2px 8px #e5e5ea`,
+                              boxShadow: `0 2px 8px rgba(212, 197, 249, 0.3)`,
                             }
                           }}
                         />
