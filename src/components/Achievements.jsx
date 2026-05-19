@@ -13,38 +13,46 @@ const Achievements = () => {
   const borderGray = "#d4c5f9";
 
   const achievements = [
+     {
+      year: "2026",
+      event: "IEEE Publication – Word Detection Research",
+      description: "Co-authored 'Word Detection Using Average Height and Inter-Character Gaps' published at 2026 International Conference on ICT and Photonics (ICTP), Kathmandu, Nepal.",
+      icon: <EmojiEventsIcon />,
+      category: "Academic"
+    },
     {
       year: "2025",
-      event: "Best Project Award – Minor Project.",
-      description: "Awarded for building a Maze Generator & Solver using the MERN stack and D3.js, featuring interactive step-by-step animations, HDFS-based solving, and performance analytics like number of intersections, dead ends, and steps taken.",
+      event: "Data Science Fellow – Equitech Futures",
+      description: "Built an interactive dashboard for African water utility managers using Python and Streamlit. Led research on youth-driven political engagement, scraped and analyzed six months of Instagram data, and ran sentiment analysis. Synthesized findings into structured analysis on political communication and public perception.",
+      icon: <EmojiEventsIcon />,
+      category: "Fellowship"
+    },
+   
+    {
+      year: "2024",
+      event: "Best Project Award – Maze Generator (Minor Project)",
+      description: "Awarded for building an interactive maze generator & solver using MERN stack and D3.js, featuring step-by-step animations, HDFS-based solving, and performance analytics tracking intersections, dead ends, and steps taken.",
       icon: <EmojiEventsIcon />,
       category: "Academic"
     },
     {
       year: "2024",
-      event: "1st Place – Intra-College Coding Competition",
-      description: "Developed a real-time collaborative code editor with integrated compiler and version control system.",
-      icon: <CodeIcon />,
-      category: "Competition"
-    },
-    {
-      year: "2024",
       event: "Selected as a Fellow for Women Leaders in Technology (WLiT)",
-      description: "One of 15 selected from over 150+ applicants for this prestigious technology leadership program.",
+      description: "One of 15 selected from over 150+ applicants for this prestigious technology leadership program. Gained hands-on experience with JavaScript, Node.js, Express, MongoDB, Git, and EJS. Attended leadership sessions covering goal-setting, empathy, and time management.",
       icon: <EmojiEventsIcon />,
       category: "Fellowship"
     },
     {
       year: "2024",
-      event: "Participant – KU Hackathon",
-      description: "Developed an interactive travel app utilizing OpenStreetMap API with custom route planning features.",
-      icon: <GroupsIcon />,
-      category: "Hackathon"
+      event: "1st Place – Intra-College Coding Competition",
+      description: "Developed a real-time collaborative code editor with integrated compiler and version control system, demonstrating strong problem-solving and implementation skills.",
+      icon: <CodeIcon />,
+      category: "Competition"
     },
     {
       year: "2024",
-      event: "Contributor to GirlScript Summer of Code (GSSoC)",
-      description: "Contributed to open source projects focusing on educational technology tools for underserved communities.",
+      event: "Open Source Contributor – GirlScript Summer of Code (GSSoC)",
+      description: "Proposed feature enhancements including disappearing messages, search filters, and resource categorization across multiple open-source projects. Collaborated with international teams via issue tracking and contributed to Hacktoberfest.",
       icon: <VolunteerActivismIcon />,
       category: "Open Source"
     },

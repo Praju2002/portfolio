@@ -20,17 +20,26 @@ const AboutMe = () => {
   };
   const skills = [
     { name: "JavaScript", level: "Intermediate" },
+    { name: "TypeScript", level: "Intermediate" },
     { name: "React", level: "Intermediate" },
     { name: "Node.js", level: "Intermediate" },
-    { name: "MongoDB", level: "Intermediate" },
     { name: "Express", level: "Intermediate" },
+    { name: "MongoDB", level: "Intermediate" },
+    { name: "TanStack Router", level: "Intermediate" },
+    { name: "Tailwind CSS", level: "Intermediate" },
+    { name: "Material-UI", level: "Intermediate" },
+    { name: "Shadcn/ui", level: "Intermediate" },
+    { name: "Python", level: "Intermediate" },
     { name: "C/C++", level: "Intermediate" },
+    { name: "Playwright", level: "Intermediate" },
     { name: "MySQL", level: "Intermediate" },
-    { name: "PostgreSQL", level: "Basic" },
+    { name: "PostgreSQL", level: "Intermediate" },
     { name: "Git", level: "Intermediate" },
-    { name: "D3.js", level: "Basic" },
-    { name: "Socket.io", level: "Basic" },
-    { name: "Docker", level: "Basic" }
+    { name: "D3.js", level: "Intermediate" },
+    { name: "OpenCV", level: "Basic" },
+    { name: "Streamlit", level: "Basic" },
+    { name: "JIRA/Jam", level: "Intermediate" },
+    { name: "Postman", level: "Intermediate" }
   ];
 
   return (
@@ -83,7 +92,7 @@ const AboutMe = () => {
               fontFamily: "'Inter', sans-serif",
             }}
           >
-            MERN Stack Developer
+            Frontend Developer & QA Engineer
           </Typography>
 
           
@@ -199,9 +208,15 @@ const AboutMe = () => {
                   </Box>
                   <Box sx={{ mb: 2 }}>
                     <Typography variant="subtitle1" fontWeight="600" color="#7e5fa6" sx={{ fontSize: { xs: "0.9rem", md: "1rem" }, fontFamily: "'Inter', sans-serif", letterSpacing: '0.02em' }}>
+                      Phone
+                    </Typography>
+                    <Typography variant="body2" sx={{ fontSize: { xs: "0.85rem", md: "0.9rem" }, color: "#666", letterSpacing: '0.01em' }}>+977 984 038 4530</Typography>
+                  </Box>
+                  <Box sx={{ mb: 2 }}>
+                    <Typography variant="subtitle1" fontWeight="600" color="#7e5fa6" sx={{ fontSize: { xs: "0.9rem", md: "1rem" }, fontFamily: "'Inter', sans-serif", letterSpacing: '0.02em' }}>
                       Location
                     </Typography>
-                    <Typography variant="body2" sx={{ fontSize: { xs: "0.85rem", md: "0.9rem" }, color: "#666", letterSpacing: '0.02em' }}>Kathmandu, Nepal</Typography>
+                    <Typography variant="body2" sx={{ fontSize: { xs: "0.85rem", md: "0.9rem" }, color: "#666", letterSpacing: '0.02em' }}>Kusunti-13, Lalitpur, Nepal</Typography>
                   </Box>
                   <Box sx={{ mb: 2 }}>
                     <Typography variant="subtitle1" fontWeight="600" color="#7e5fa6" sx={{ fontSize: { xs: "0.9rem", md: "1rem" }, fontFamily: "'Inter', sans-serif", letterSpacing: '0.02em' }}>
@@ -258,19 +273,13 @@ const AboutMe = () => {
                 </Box>
                 <Divider sx={{ mb: 2, borderColor: `#e8e0f8` }} />
                 <Typography variant="body1" sx={{ mb: 2, color: "#444", lineHeight: 1.8, fontSize: { xs: "0.9rem", sm: "1rem" } }}>
-                  I'm a passionate Computer Engineering graduate with a strong drive for developing innovative web applications
-                  and solving complex problems. My journey in tech began with curiosity and has evolved into expertise
-                  in modern development stacks.
+                  Computer Engineering graduate with hands-on experience in frontend development (React, TypeScript, Tailwind CSS) and software QA (manual testing, Playwright automation, JIRA). Focused on building reliable, well-tested systems.
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 2, color: "#444", lineHeight: 1.8, fontSize: { xs: "0.9rem", sm: "1rem" } }}>
-                  With a focus on the MERN stack (MongoDB, Express, React, Node.js), I've developed a
-                  variety of applications ranging from e-commerce platforms to real-time communication systems.
-                  I believe in writing clean, maintainable code and designing intuitive user experiences.
+                  Currently working as a QA Trainee at Asteroid Studio, designing and executing comprehensive test cases, identifying bugs across staging and production environments. Previously interned as a Frontend Developer, building responsive UI features using React, TypeScript, TanStack Router, and modern CSS frameworks.
                 </Typography>
                 <Typography variant="body1" sx={{ color: "#444", lineHeight: 1.8, fontSize: { xs: "0.9rem", sm: "1rem" } }}>
-                  My goal is to continuously learn and grow as a developer while contributing to meaningful
-                  projects that make a positive impact on users' lives. I'm particularly interested in web technologies,
-                  distributed systems, and the intersection of design and functionality.
+                  I'm passionate about creating scalable, maintainable code and delivering high-quality user experiences. My diverse background spanning full-stack development, QA , and data science enables me to approach problems from multiple angles and collaborate effectively across teams.
                 </Typography>
               </Paper>
             </motion.div>
