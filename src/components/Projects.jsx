@@ -21,35 +21,35 @@ const projects = [
   {
     title: "Maze Generator",
     image: mazeimg,
-    desc: "Interactive maze generator with Kruskal's and Prim's algorithms and D3.js performance visualizations. Implemented heuristic-based Depth First Search (HDFS) for real-time maze solving. Won Best Project Award at Everest Engineering College.",
+    desc: "An interactive maze generator and solver that visualizes algorithms (Kruskal, Prim) and performance using D3.js. I implemented a heuristic DFS solver and added analytics; this project won the Best Project Award.",
     tags: ["React", "MongoDB", "D3.js", "Express", "Algorithms"],
     github: "https://github.com/Praju2002/Minorproj.git"
   },
   {
     title: "DocuFind",
     image: docufindimg,
-    desc: "Adaptive word-detection system for degraded documents (crumpled, low-contrast, varied fonts). Compared pixel-based and feature-based methods; built an 'Auto' mode that selects the best approach. Basis for IEEE-published research.",
+    desc: "An adaptive word-detection system that handles low-contrast and damaged documents. I compared pixel- and feature-based approaches and built an 'Auto' mode to pick the best method — work that contributed to an IEEE paper.",
     tags: ["OpenCV", "Python", "Computer Vision"],
     github: "https://github.com/Praju2002/template-final.git"
   },
   {
     title: "Text Compressor",
     image: textimg,
-    desc: "Lossless file compression tool using Huffman encoding with file I/O and directory management. Reduces file sizes while maintaining data integrity through optimal algorithmic compression.",
+    desc: "A lossless compression tool using Huffman encoding. It reduces file sizes while preserving every bit of data, with simple file and directory handling.",
     tags: ["C++", "Huffman Encoding", "Algorithms"],
     github: "https://github.com/Praju2002/miniproject.git"
   },
   {
     title: "Gantabya",
     image: "/gantabya.jpg",
-    desc: "Hyper-localized travel app for Nepali travelers with interactive trail mapping via OpenStreetMap. Users can add/share trails and checkpoints; real-time weather via OpenWeatherMap API.",
+    desc: "A hyper-local travel app for Nepali travelers that lets users share trails and map routes with OpenStreetMap. It also surfaces live weather for each trail.",
     tags: ["React", "OpenStreetMap", "REST APIs", "Geolocation"],
     github: "https://github.com/Abhiyan31415/Elsendero.git"
   },
   {
     title: "SootheSphere",
     image: soothesphereimg,
-    desc: "Sound therapy app with personalized soundscapes based on user mood and a journaling interface. Create custom audio environments to enhance focus, sleep, and relaxation. Built during WLiT fellowship.",
+    desc: "A sound-therapy app that generates personalized soundscapes and includes a simple journaling interface to help with focus, sleep, and relaxation.",
     tags: ["Node.js", "MongoDB", "EJS", "Audio Processing"],
     github: "https://github.com/Praju2002/WLiT-Hackathon.git"
   }

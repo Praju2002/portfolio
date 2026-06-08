@@ -117,7 +117,7 @@ const Achievements = () => {
               letterSpacing: '0.02em',
             }}
           >
-            A timeline of my professional journey and key milestones that have shaped my development career
+            Highlights from my journey — projects, awards, and experiences that helped shape my skills.
           </Typography>
         </motion.div>
         <Paper

@@ -17,7 +17,7 @@ const Footer = () => {
       }}
     >
       <Typography variant="body2" sx={{ fontWeight: 400, fontSize: "0.875rem", fontFamily: "'Inter', sans-serif" }}>
-        © 2025 Praju Khanal. All rights reserved.
+        © 2026 Praju Khanal. All rights reserved.
       </Typography>
     </Box>
   );

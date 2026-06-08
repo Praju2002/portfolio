@@ -37,7 +37,7 @@ const Contact = () => {
     setTimeout(() => {
       setFormStatus({
         open: true,
-        message: "Message sent successfully! I'll get back to you soon.",
+        message: "Thanks — your message is on its way. I'll get back to you soon.",
         severity: "success"
       });
       setFormData({ name: "", email: "", message: "" });
@@ -135,8 +135,7 @@ const Contact = () => {
                 letterSpacing: '0.01em',
               }}
             >
-              Have a project in mind or want to discuss opportunities? I'd love to hear from you.
-              Fill out the form below and I'll get back to you as soon as possible.
+              Have an idea or opportunity you'd like to discuss? Tell me about it below — I'll read every message and reply as soon as I can.
             </Typography>
           </motion.div>
           <Grid container spacing={4} sx={{ alignItems: "stretch", justifyContent: "center", width: "100%" }}>
@@ -191,6 +190,7 @@ const Contact = () => {
                           href={platform.url}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`Visit ${platform.name} profile`}
                           sx={{
                             p: 1.5,
                             borderRadius: "50%",

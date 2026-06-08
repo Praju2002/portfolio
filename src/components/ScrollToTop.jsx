@@ -26,6 +26,7 @@ const ScrollToTop = () => {
     <Zoom in={showScroll}>
       <Fab
         onClick={scrollTop}
+        aria-label="Scroll to top"
         sx={{
           position: "fixed",
           bottom: { xs: 80, md: 20 },

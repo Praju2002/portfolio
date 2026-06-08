@@ -273,13 +273,13 @@ const AboutMe = () => {
                 </Box>
                 <Divider sx={{ mb: 2, borderColor: `#e8e0f8` }} />
                 <Typography variant="body1" sx={{ mb: 2, color: "#444", lineHeight: 1.8, fontSize: { xs: "0.9rem", sm: "1rem" } }}>
-                  Computer Engineering graduate with hands-on experience in frontend development (React, TypeScript, Tailwind CSS) and software QA (manual testing, Playwright automation, JIRA). Focused on building reliable, well-tested systems.
+                  I graduated in Computer Engineering and enjoy building clear, responsive frontends and reliable test suites. My day-to-day work blends React, TypeScript, and modern CSS with hands-on QA using Playwright and manual testing.
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 2, color: "#444", lineHeight: 1.8, fontSize: { xs: "0.9rem", sm: "1rem" } }}>
-                  Currently working as a QA Trainee at Asteroid Studio, designing and executing comprehensive test cases, identifying bugs across staging and production environments. Previously interned as a Frontend Developer, building responsive UI features using React, TypeScript, TanStack Router, and modern CSS frameworks.
+                  Right now I'm a QA Trainee at Asteroid Studio, where I write test plans, track down tricky bugs, and help keep staging and production stable. I also have experience interning as a frontend developer, shipping responsive UI features using React and TypeScript.
                 </Typography>
                 <Typography variant="body1" sx={{ color: "#444", lineHeight: 1.8, fontSize: { xs: "0.9rem", sm: "1rem" } }}>
-                  I'm passionate about creating scalable, maintainable code and delivering high-quality user experiences. My diverse background spanning full-stack development, QA , and data science enables me to approach problems from multiple angles and collaborate effectively across teams.
+                  I care about readable, maintainable code and user experiences that feel effortless. Combining development, QA, and data-focused work helps me solve problems from different angles and collaborate well with teammates.
                 </Typography>
               </Paper>
             </motion.div>
